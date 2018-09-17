@@ -1,0 +1,52 @@
+Searching 22 files for "header"
+
+/Users/ericgao/Documents/Career/Blog/themes/landscape/source/css/_partial/article.styl:
+   26    margin: 0 12px 1em
+   27  
+   28: .article-header
+   29    padding: article-padding article-padding 0
+   30  
+
+/Users/ericgao/Documents/Career/Blog/themes/landscape/source/css/_partial/header.styl:
+    1: #header
+    2    height: banner-height
+    3    position: relative
+    .
+   16      background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
+   17  
+   18: #header-outer
+   19    height: 100%
+   20    position: relative
+   21  
+   22: #header-inner
+   23    position: relative
+   24    overflow: hidden
+   ..
+   34    z-index: -1
+   35  
+   36: #header-title
+   37    text-align: center
+   38    height: logo-size
+
+/Users/ericgao/Documents/Career/Blog/themes/landscape/source/css/_partial/highlight.styl:
+  139    .value
+  140    .inheritance
+  141:   .header
+  142    .ruby .symbol
+  143    .xml .cdata
+
+/Users/ericgao/Documents/Career/Blog/themes/landscape/source/css/_variables.styl:
+   33  line-height-title = 1.1em
+   34  
+   35: // Header
+   36  logo-size = 50px
+   37  subtitle-size = 16px
+
+/Users/ericgao/Documents/Career/Blog/themes/landscape/source/css/style.styl:
+   78  
+   79  @import "_extend"
+   80: @import "_partial/header"
+   81  @import "_partial/article"
+   82  @import "_partial/comment"
+
+8 matches across 5 files
