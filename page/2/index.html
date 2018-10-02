@@ -62,6 +62,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/Two-Sum/" class="article-date">
+  <time datetime="2018-09-17T01:03:08.000Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/Two-Sum/">LeetCode Coding Diary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h2><ul>
+<li>Hash Table;</li>
+<li>Create a hash map:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Check whether a component is in the map or not;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.containsKey(complement)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Add a <em>Key:Value</em> to hash map;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.put(nums[i], i)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Get the <em>Value</em> of a <em>Key</em> from the hash map;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.get(complement)</span><br></pre></td></tr></table></figure>
+<h3 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h3><ul>
+<li>Time: Look up an element is O(1), but could degenerate to O(n);</li>
+<li>Space: O(n) if the map stores n elements;</li>
+<li>The space complexity of a hash table:</li>
+</ul>
+<blockquote>
+<p>The hash function is computed modulo the size of a reference vector that is much smaller than the hash function range. Because this value is fixed, it is not considered in the space complexity computation. Consequently, the space complexity of every reasonable hash table is O(n).</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/Two-Sum/" data-id="cjms3gl5h000geta7vh4yfe5b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hello" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/16/Hello/" class="article-date">
@@ -93,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/16/Hello/" data-id="cjms2xfqu0002cja7mmlnusv3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/16/Hello/" data-id="cjms3gl520002eta7cpa8i0vl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,6 +216,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/02/Test/">Test</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/02/Notes-for-SQL/">Notes for SQL</a>
           </li>
         
@@ -166,10 +233,6 @@
         
           <li>
             <a href="/2018/10/02/Notes-for-Golang/">Notes for Golang</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/02/Notes-for-GitHub-Command/">Notes for GitHub Command</a>
           </li>
         
       </ul>
