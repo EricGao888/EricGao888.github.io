@@ -5,20 +5,20 @@
   
 
   
-  <title>LeetCode Coding Diary | Eric&#39;s Fantasy</title>
+  <title>Notes for Algorithm | Eric&#39;s Fantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Two Sum Hash Table; Create a hash map:  1Map&amp;lt;Integer, Integer&amp;gt; map = new HashMap&amp;lt;&amp;gt;();  Check whether a component is in the map or not;  1map.containsKey(complement)  Add a Key:Value to has">
-<meta name="keywords" content="leetcode">
+  <meta name="description" content="Recursion Difference between recursion and iteration; 在使用递归时；必须有一个明确的递归结束条件；称为递归出口; 递归由递推和回归两部分组成，递推是把复杂的问题的求解推到比原问题简单一些的问题的求解；回归是当获得最简单的情况后，逐步返回，依次得到复杂的解； 所以利用递归来解决问题，获得的最简单情况是已知答案的，是可以直接给出该情况下的结果的；">
+<meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode Coding Diary">
-<meta property="og:url" content="https://EricGao888.github.io/2018/09/16/Two-Sum/index.html">
+<meta property="og:title" content="Notes for Algorithm">
+<meta property="og:url" content="https://EricGao888.github.io/2018/10/04/Algorithm/index.html">
 <meta property="og:site_name" content="Eric&#39;s Fantasy">
-<meta property="og:description" content="Two Sum Hash Table; Create a hash map:  1Map&amp;lt;Integer, Integer&amp;gt; map = new HashMap&amp;lt;&amp;gt;();  Check whether a component is in the map or not;  1map.containsKey(complement)  Add a Key:Value to has">
+<meta property="og:description" content="Recursion Difference between recursion and iteration; 在使用递归时；必须有一个明确的递归结束条件；称为递归出口; 递归由递推和回归两部分组成，递推是把复杂的问题的求解推到比原问题简单一些的问题的求解；回归是当获得最简单的情况后，逐步返回，依次得到复杂的解； 所以利用递归来解决问题，获得的最简单情况是已知答案的，是可以直接给出该情况下的结果的；">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-30T18:16:15.564Z">
+<meta property="og:updated_time" content="2018-10-04T21:00:24.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode Coding Diary">
-<meta name="twitter:description" content="Two Sum Hash Table; Create a hash map:  1Map&amp;lt;Integer, Integer&amp;gt; map = new HashMap&amp;lt;&amp;gt;();  Check whether a component is in the map or not;  1map.containsKey(complement)  Add a Key:Value to has">
+<meta name="twitter:title" content="Notes for Algorithm">
+<meta name="twitter:description" content="Recursion Difference between recursion and iteration; 在使用递归时；必须有一个明确的递归结束条件；称为递归出口; 递归由递推和回归两部分组成，递推是把复杂的问题的求解推到比原问题简单一些的问题的求解；回归是当获得最简单的情况后，逐步返回，依次得到复杂的解； 所以利用递归来解决问题，获得的最简单情况是已知答案的，是可以直接给出该情况下的结果的；">
   
     <link rel="alternate" href="/atom.xml" title="Eric&#39;s Fantasy" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Algorithm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/09/16/Two-Sum/" class="article-date">
-  <time datetime="2018-09-17T01:03:08.000Z" itemprop="datePublished">2018-09-16</time>
+    <a href="/2018/10/04/Algorithm/" class="article-date">
+  <time datetime="2018-10-04T18:43:48.000Z" itemprop="datePublished">2018-10-04</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode Coding Diary
+      Notes for Algorithm
     </h1>
   
 
@@ -87,39 +87,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h2><ul>
-<li>Hash Table;</li>
-<li>Create a hash map:</li>
+        <h2 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h2><ul>
+<li><a href="https://techdifferences.com/difference-between-recursion-and-iteration-2.html" target="_blank" rel="noopener">Difference between recursion and iteration</a>;</li>
+<li>在使用递归时；必须有一个明确的递归结束条件；称为递归出口;</li>
+<li>递归由递推和回归两部分组成，递推是把复杂的问题的求解推到比原问题简单一些的问题的求解；回归是当获得最简单的情况后，逐步返回，依次得到复杂的解；</li>
+<li>所以利用递归来解决问题，获得的最简单情况是已知答案的，是可以直接给出该情况下的结果的；</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Check whether a component is in the map or not;</li>
+<h2 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h2><ul>
+<li>There are two different kinds of hash tables: <code>hash set</code> and <code>hash map</code>;</li>
+<li>Typically, if N is constant and small, we can simply use an <code>array</code> to store keys in the same bucket. If N is variable or large, we might need to use <code>height-balanced binary search tree</code> instead;</li>
+<li><code>Insertion</code> and <code>search</code> are two basic operations in a hash table. Besides, there are operations which are based on these two operations. For example, when we <code>remove</code> an element, we will first <code>search</code> the element and then remove the element from the corresponding position if the element exists.</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.containsKey(complement)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Add a <em>Key:Value</em> to hash map;</li>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>LeetCode</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.put(nums[i], i)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Get the <em>Value</em> of a <em>Key</em> from the hash map;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.get(complement)</span><br></pre></td></tr></table></figure>
-<h3 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h3><ul>
-<li>Time: Look up an element is O(1), but could degenerate to O(n);</li>
-<li>Space: O(n) if the map stores n elements;</li>
-<li>The space complexity of a hash table:</li>
-</ul>
-<blockquote>
-<p>The hash function is computed modulo the size of a reference vector that is much smaller than the hash function range. Because this value is fixed, it is not considered in the space complexity computation. Consequently, the space complexity of every reasonable hash table is O(n).</p>
-</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/09/16/Two-Sum/" data-id="cjmuzsnoo000f43a7t3initmb" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/04/Algorithm/" data-id="cjmvauaqd0000pyu88u24j1x3" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
 
     </footer>
   </div>
@@ -127,19 +116,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/09/29/Macro-F1-Implementation/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/04/LeetCode/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Macro-F1 Implementation
+          LeetCode Coding Diary
         
       </div>
     </a>
   
   
-    <a href="/2018/09/16/Hello/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/10/02/Test/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello</div>
+      <div class="article-nav-title">Test</div>
     </a>
   
 </nav>
@@ -190,6 +179,14 @@
       <ul>
         
           <li>
+            <a href="/2018/10/04/LeetCode/">LeetCode Coding Diary</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/04/Algorithm/">Notes for Algorithm</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/02/Test/">Test</a>
           </li>
         
@@ -199,14 +196,6 @@
         
           <li>
             <a href="/2018/10/02/Notes-for-Python/">Notes for Python</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/02/Notes-for-Java/">Notes for Java</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/02/Notes-for-Golang/">Notes for Golang</a>
           </li>
         
       </ul>

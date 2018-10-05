@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Macro-F1-Implementation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/09/16/Two-Sum/" class="article-date">
-  <time datetime="2018-09-17T01:03:08.000Z" itemprop="datePublished">2018-09-16</time>
+    <a href="/2018/09/29/Macro-F1-Implementation/" class="article-date">
+  <time datetime="2018-09-29T23:12:23.000Z" itemprop="datePublished">2018-09-29</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/16/Two-Sum/">LeetCode Coding Diary</a>
+      <a class="article-title" href="/2018/09/29/Macro-F1-Implementation/">Macro-F1 Implementation</a>
     </h1>
   
 
@@ -84,39 +84,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h2><ul>
-<li>Hash Table;</li>
-<li>Create a hash map:</li>
+        <p><strong><em>Python Implementation of Macro-F1 Score for Multiclass</em></strong></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>Use the result computed by sklearn as ans, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html" target="_blank" rel="noopener">f1 computation reference</a></li>
+<li>Use the conception of <a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank" rel="noopener">confusion matrix</a><h3 id="Recommended-Reference-from-YouTube"><a href="#Recommended-Reference-from-YouTube" class="headerlink" title="Recommended Reference from YouTube"></a>Recommended Reference from YouTube</h3></li>
+<li><a href="https://www.youtube.com/watch?v=t3H0xKjdaJ0&amp;list=PLlmEZCU0l6maux5LkhtKBnpwkmR94WVk9&amp;index=2" target="_blank" rel="noopener">Confusion Matrix</a></li>
+<li><a href="https://www.youtube.com/watch?v=HBi-P5j0Kec&amp;list=PLlmEZCU0l6maux5LkhtKBnpwkmR94WVk9&amp;index=3" target="_blank" rel="noopener">Metrices for Multiclassification</a></li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Check whether a component is in the map or not;</li>
+<h2 id="Import-Libraries"><a href="#Import-Libraries" class="headerlink" title="Import Libraries"></a>Import Libraries</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> f1_score</span><br><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><ul>
+<li>Assume we have to classify input into 11 labels as 11 continuous integer from 0 to 10</li>
+<li>Assume there may be missing labels during cross validation</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.containsKey(complement)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Add a <em>Key:Value</em> to hash map;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.put(nums[i], i)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Get the <em>Value</em> of a <em>Key</em> from the hash map;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.get(complement)</span><br></pre></td></tr></table></figure>
-<h3 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h3><ul>
-<li>Time: Look up an element is O(1), but could degenerate to O(n);</li>
-<li>Space: O(n) if the map stores n elements;</li>
-<li>The space complexity of a hash table:</li>
-</ul>
-<blockquote>
-<p>The hash function is computed modulo the size of a reference vector that is much smaller than the hash function range. Because this value is fixed, it is not considered in the space complexity computation. Consequently, the space complexity of every reasonable hash table is O(n).</p>
-</blockquote>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_F1</span><span class="params">(y_true,y_pred)</span>:</span></span><br><span class="line">    N = len(y_true)</span><br><span class="line">    L = <span class="number">11</span></span><br><span class="line">    confusionMatrix = np.zeros((<span class="number">11</span>,<span class="number">11</span>))</span><br><span class="line">    dict_F1 = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">11</span>):</span><br><span class="line">        dict_F1[i] = <span class="number">-1</span> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">        confusionMatrix[y_true[i]][y_pred[i]] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">11</span>):</span><br><span class="line">        <span class="keyword">if</span> np.sum(confusionMatrix[i]) != <span class="number">0</span>:</span><br><span class="line">            dict_F1[i] = <span class="number">2.0</span>*confusionMatrix[i][i]/\</span><br><span class="line">            (np.sum(confusionMatrix[i])+np.sum(confusionMatrix[:,i]))</span><br><span class="line">        <span class="keyword">elif</span> np.sum(confusionMatrix[:,i]) != <span class="number">0</span>:</span><br><span class="line">            dict_F1[i] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            L -= <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">    sum_F1 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> dict_F1:</span><br><span class="line">        <span class="keyword">if</span> dict_F1[key] != <span class="number">-1</span>:</span><br><span class="line">            sum_F1 += dict_F1[key]</span><br><span class="line">    <span class="keyword">return</span> float(sum_F1)/L</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    y_true = []</span><br><span class="line">    y_pred = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        y_true.append(random.randint(<span class="number">0</span>,<span class="number">10</span>))</span><br><span class="line">        y_pred.append(random.randint(<span class="number">0</span>,<span class="number">10</span>))</span><br><span class="line"><span class="comment">#     print(y_true[:10])</span></span><br><span class="line"><span class="comment">#     print(y_pred[:10])</span></span><br><span class="line">    f1 = compute_F1(y_true,y_pred)</span><br><span class="line">    f1_ans = f1_score(y_true, y_pred, average=<span class="string">'macro'</span>)    </span><br><span class="line"><span class="comment">#     print("F1: "+str(f1)+", F1 Answer: "+str(f1_ans))</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/09/16/Two-Sum/" data-id="cjmuzsnoo000f43a7t3initmb" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/09/29/Macro-F1-Implementation/" data-id="cjmvauaql0005pyu8u2bmu295" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
 
     </footer>
   </div>
@@ -156,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/09/16/Hello/" data-id="cjmuzsno8000143a7wnw00hc6" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/09/16/Hello/" data-id="cjmvauaqk0004pyu8t0xw3tao" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,6 +204,14 @@
       <ul>
         
           <li>
+            <a href="/2018/10/04/LeetCode/">LeetCode Coding Diary</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/04/Algorithm/">Notes for Algorithm</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/02/Test/">Test</a>
           </li>
         
@@ -225,14 +221,6 @@
         
           <li>
             <a href="/2018/10/02/Notes-for-Python/">Notes for Python</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/02/Notes-for-Java/">Notes for Java</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/02/Notes-for-Golang/">Notes for Golang</a>
           </li>
         
       </ul>
