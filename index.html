@@ -62,6 +62,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-LeetCode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/04/LeetCode/" class="article-date">
+  <time datetime="2018-10-05T01:03:08.000Z" itemprop="datePublished">2018-10-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/04/LeetCode/">LeetCode Coding Diary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h2><ul>
+<li>Hash Table;</li>
+<li>Create a hash map:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Check whether a component is in the map or not;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.containsKey(complement)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Add a <em>Key:Value</em> to hash map;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.put(nums[i], i)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Get the <em>Value</em> of a <em>Key</em> from the hash map;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.get(complement)</span><br></pre></td></tr></table></figure>
+<h3 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h3><ul>
+<li>Time: Look up an element is O(1), but could degenerate to O(n);</li>
+<li>Space: O(n) if the map stores n elements;</li>
+<li>The space complexity of a hash table:</li>
+</ul>
+<blockquote>
+<p>The hash function is computed modulo the size of a reference vector that is much smaller than the hash function range. Because this value is fixed, it is not considered in the space complexity computation. Consequently, the space complexity of every reasonable hash table is O(n).</p>
+</blockquote>
+<h2 id="705-Design-HashSet"><a href="#705-Design-HashSet" class="headerlink" title="705. Design HashSet"></a>705. Design HashSet</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHashSet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> numBuckets = <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> numPerBuckets = <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span>[][] table;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyHashSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        table = <span class="keyword">new</span> <span class="keyword">boolean</span>[numBuckets][];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hashKey = key % numBuckets;</span><br><span class="line">        <span class="keyword">if</span>(table[hashKey] == <span class="keyword">null</span>)&#123;</span><br><span class="line">            table[hashKey] = <span class="keyword">new</span> <span class="keyword">boolean</span>[numPerBuckets + (hashKey == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>)];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        table[hashKey][key / numBuckets] = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hashKey = key % numBuckets;</span><br><span class="line">        <span class="keyword">if</span>(table[hashKey] != <span class="keyword">null</span>)&#123;</span><br><span class="line">            table[hashKey][key / numBuckets] = <span class="keyword">false</span>;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Returns true if this set contains the specified element */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hashKey = key % numBuckets;</span><br><span class="line">        <span class="keyword">if</span>(table[hashKey] == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> table[hashKey][key / numBuckets];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyHashSet object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyHashSet obj = new MyHashSet();</span></span><br><span class="line"><span class="comment"> * obj.add(key);</span></span><br><span class="line"><span class="comment"> * obj.remove(key);</span></span><br><span class="line"><span class="comment"> * boolean param_3 = obj.contains(key);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/10/04/LeetCode/" data-id="cjmvb7vd90004sru8khbzbfn7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Algorithm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/04/Algorithm/" class="article-date">
@@ -102,73 +165,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/04/Algorithm/" data-id="cjmvb4l660000scu8l926t3rj" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/04/Algorithm/" data-id="cjmvb7vd10000sru8ac71u4u7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-LeetCode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/03/LeetCode/" class="article-date">
-  <time datetime="2018-10-04T01:03:08.000Z" itemprop="datePublished">2018-10-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/03/LeetCode/">LeetCode Coding Diary</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h2><ul>
-<li>Hash Table;</li>
-<li>Create a hash map:</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Check whether a component is in the map or not;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.containsKey(complement)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Add a <em>Key:Value</em> to hash map;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.put(nums[i], i)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Get the <em>Value</em> of a <em>Key</em> from the hash map;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map.get(complement)</span><br></pre></td></tr></table></figure>
-<h3 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h3><ul>
-<li>Time: Look up an element is O(1), but could degenerate to O(n);</li>
-<li>Space: O(n) if the map stores n elements;</li>
-<li>The space complexity of a hash table:</li>
-</ul>
-<blockquote>
-<p>The hash function is computed modulo the size of a &gt;reference vector that is much smaller than the hash &gt;function range. Because this value is fixed, it is &gt;not considered in the space complexity computation. &gt;Consequently, the space complexity of every &gt;reasonable hash table is O(n).</p>
-</blockquote>
-<h2 id="705-Design-HashSet"><a href="#705-Design-HashSet" class="headerlink" title="705. Design HashSet"></a>705. Design HashSet</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHashSet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> numBuckets = <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> numPerBuckets = <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span>[][] table;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyHashSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        table = <span class="keyword">new</span> <span class="keyword">boolean</span>[numBuckets][];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hashKey = key % numBuckets;</span><br><span class="line">        <span class="keyword">if</span>(table[hashKey] == <span class="keyword">null</span>)&#123;</span><br><span class="line">            table[hashKey] = <span class="keyword">new</span> <span class="keyword">boolean</span>[numPerBuckets + (hashKey == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>)];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        table[hashKey][key / numBuckets] = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hashKey = key % numBuckets;</span><br><span class="line">        <span class="keyword">if</span>(table[hashKey] != <span class="keyword">null</span>)&#123;</span><br><span class="line">            table[hashKey][key / numBuckets] = <span class="keyword">false</span>;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Returns true if this set contains the specified element */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> hashKey = key % numBuckets;</span><br><span class="line">        <span class="keyword">if</span>(table[hashKey] == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> table[hashKey][key / numBuckets];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyHashSet object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyHashSet obj = new MyHashSet();</span></span><br><span class="line"><span class="comment"> * obj.add(key);</span></span><br><span class="line"><span class="comment"> * obj.remove(key);</span></span><br><span class="line"><span class="comment"> * boolean param_3 = obj.contains(key);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/03/LeetCode/" data-id="cjmvb4l6f0004scu8vj5p9b51" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
 
     </footer>
   </div>
@@ -204,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjmvb4l6o000gscu83ibeogce" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjmvb7vdu000tsru80n7k7o8p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -243,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-SQL/" data-id="cjmvb4l6p000iscu8oa8hrtja" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-SQL/" data-id="cjmvb7vdh000gsru8rrss82s2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -304,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjmvb4l6l000dscu8god54itu" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjmvb7vdf000esru86cmt7ro5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -385,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Java/" data-id="cjmvb4l6m000escu8i6cqlhgz" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Java/" data-id="cjmvb7vde000dsru8nbia1k8i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -438,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjmvb4l6k000ascu8frqpi0id" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjmvb7vdd000asru8v3nvt7g4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
@@ -479,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjmvb4l6j0009scu8rcd80ouz" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjmvb7vdc0009sru8cbfewmw0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -517,7 +517,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/DataStructure/" data-id="cjmvb4l6d0003scu8nx1oshjg" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/DataStructure/" data-id="cjmvb7vd50001sru8yr74k6md" class="article-share-link">Share</a>
       
       
     </footer>
@@ -584,7 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/09/29/Mac-Terminal-Commands/" data-id="cjmvb4l6g0005scu879kldilt" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/09/29/Mac-Terminal-Commands/" data-id="cjmvb7vda0005sru8uelcuhq2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
@@ -646,11 +646,11 @@
       <ul>
         
           <li>
-            <a href="/2018/10/04/Algorithm/">Notes for Algorithm</a>
+            <a href="/2018/10/04/LeetCode/">LeetCode Coding Diary</a>
           </li>
         
           <li>
-            <a href="/2018/10/03/LeetCode/">LeetCode Coding Diary</a>
+            <a href="/2018/10/04/Algorithm/">Notes for Algorithm</a>
           </li>
         
           <li>
