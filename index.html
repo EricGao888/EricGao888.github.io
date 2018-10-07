@@ -62,6 +62,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Machine-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/07/Machine-Learning/" class="article-date">
+  <time datetime="2018-10-07T06:01:00.000Z" itemprop="datePublished">2018-10-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/07/Machine-Learning/">Notes for Machine Learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h2><ul>
+<li>Apply the same $\sigma$ and $\mu$ calculated on training set to the test set when doing normalization; </li>
+</ul>
+<h2 id="Macro-F1-Implementation"><a href="#Macro-F1-Implementation" class="headerlink" title="Macro-F1 Implementation"></a>Macro-F1 Implementation</h2><p><strong><em>Python Implementation of Macro-F1 Score for Multiclass</em></strong></p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ul>
+<li>Use the result computed by sklearn as ans, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html" target="_blank" rel="noopener">f1 computation reference</a></li>
+<li>Use the conception of <a href="https://en.wikipedia.org/wiki/Confusion_matrix" target="_blank" rel="noopener">confusion matrix</a><h4 id="Recommended-Reference-from-YouTube"><a href="#Recommended-Reference-from-YouTube" class="headerlink" title="Recommended Reference from YouTube"></a>Recommended Reference from YouTube</h4></li>
+<li><a href="https://www.youtube.com/watch?v=t3H0xKjdaJ0&amp;list=PLlmEZCU0l6maux5LkhtKBnpwkmR94WVk9&amp;index=2" target="_blank" rel="noopener">Confusion Matrix</a></li>
+<li><a href="https://www.youtube.com/watch?v=HBi-P5j0Kec&amp;list=PLlmEZCU0l6maux5LkhtKBnpwkmR94WVk9&amp;index=3" target="_blank" rel="noopener">Metrices for Multiclassification</a></li>
+</ul>
+<h3 id="Import-Libraries"><a href="#Import-Libraries" class="headerlink" title="Import Libraries"></a>Import Libraries</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> f1_score</span><br><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><ul>
+<li>Assume we have to classify input into 11 labels as 11 continuous integer from 0 to 10</li>
+<li>Assume there may be missing labels during cross validation</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_F1</span><span class="params">(y_true,y_pred)</span>:</span></span><br><span class="line">    N = len(y_true)</span><br><span class="line">    L = <span class="number">11</span></span><br><span class="line">    confusionMatrix = np.zeros((<span class="number">11</span>,<span class="number">11</span>))</span><br><span class="line">    dict_F1 = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">11</span>):</span><br><span class="line">        dict_F1[i] = <span class="number">-1</span> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">        confusionMatrix[y_true[i]][y_pred[i]] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">11</span>):</span><br><span class="line">        <span class="keyword">if</span> np.sum(confusionMatrix[i]) != <span class="number">0</span>:</span><br><span class="line">            dict_F1[i] = <span class="number">2.0</span>*confusionMatrix[i][i]/\</span><br><span class="line">            (np.sum(confusionMatrix[i])+np.sum(confusionMatrix[:,i]))</span><br><span class="line">        <span class="keyword">elif</span> np.sum(confusionMatrix[:,i]) != <span class="number">0</span>:</span><br><span class="line">            dict_F1[i] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            L -= <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">    sum_F1 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> dict_F1:</span><br><span class="line">        <span class="keyword">if</span> dict_F1[key] != <span class="number">-1</span>:</span><br><span class="line">            sum_F1 += dict_F1[key]</span><br><span class="line">    <span class="keyword">return</span> float(sum_F1)/L</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    y_true = []</span><br><span class="line">    y_pred = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        y_true.append(random.randint(<span class="number">0</span>,<span class="number">10</span>))</span><br><span class="line">        y_pred.append(random.randint(<span class="number">0</span>,<span class="number">10</span>))</span><br><span class="line"><span class="comment">#     print(y_true[:10])</span></span><br><span class="line"><span class="comment">#     print(y_pred[:10])</span></span><br><span class="line">    f1 = compute_F1(y_true,y_pred)</span><br><span class="line">    f1_ans = f1_score(y_true, y_pred, average=<span class="string">'macro'</span>)    </span><br><span class="line"><span class="comment">#     print("F1: "+str(f1)+", F1 Answer: "+str(f1_ans))</span></span><br></pre></td></tr></table></figure>
+<h2 id="Machine-Learning-Code-Module-To-Be-Continued"><a href="#Machine-Learning-Code-Module-To-Be-Continued" class="headerlink" title="Machine Learning Code Module(To Be Continued)"></a>Machine Learning Code Module(To Be Continued)</h2><ul>
+<li>Preprocess Data;</li>
+<li>Split Data Set;</li>
+<li>Train Model;</li>
+<li>Make Prediction;</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preprocess</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">	<span class="comment"># Combine data and label;</span></span><br><span class="line">	<span class="comment"># Normalization;</span></span><br><span class="line">	<span class="comment"># Shuffle dataSet;</span></span><br><span class="line">	<span class="comment"># Return preprocessed dataSet;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">split_dataSet</span><span class="params">(dataSet,splitRules)</span>:</span></span><br><span class="line">	<span class="comment"># Split data set into training set and test set according to split rules;</span></span><br><span class="line">	<span class="comment"># Return training set and test set;</span></span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_model</span><span class="params">(trainingSet,trainingParameters)</span>:</span></span><br><span class="line">	<span class="comment"># Train models</span></span><br><span class="line"> 	<span class="comment"># Return parameters of the model;</span></span><br><span class="line"> 	</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(modelParameters,testSet)</span>:</span></span><br><span class="line">	<span class="comment"># Make prediction and compute evluation metrices</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/10/07/Machine-Learning/" data-id="cjmygmknw0005c2u81vdk2c2f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LeetCode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/04/LeetCode/" class="article-date">
@@ -113,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/04/LeetCode/" data-id="cjmvb7vd90004sru8khbzbfn7" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/04/LeetCode/" data-id="cjmygmkns0002c2u8fjwtiqr4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -165,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/04/Algorithm/" data-id="cjmvb7vd10000sru8ac71u4u7" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/04/Algorithm/" data-id="cjmygmknr0001c2u8t2wdk0qy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
@@ -204,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjmvb7vdu000tsru80n7k7o8p" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjmygmkoh000tc2u8as7s10ow" class="article-share-link">Share</a>
       
       
     </footer>
@@ -243,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-SQL/" data-id="cjmvb7vdh000gsru8rrss82s2" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-SQL/" data-id="cjmygmko1000cc2u8dz2nd8yf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -299,12 +361,14 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter, attrgetter</span><br><span class="line">recommenderList1 = sorted(recommenderList0,key=itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><ul>
 <li>axis: 0 down, 1 across;</li>
+<li>Convert float to int: [<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- [```numpy.argmax```](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html)</span><br><span class="line">- ```insert```:</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">A = np.array([[1,2],[3,4],[5,6]])</span><br><span class="line">B = np.array([[1],[2],[3]])</span><br><span class="line">print A</span><br><span class="line">print</span><br><span class="line">print B</span><br><span class="line">C = np.insert(A,[2],B,axis=1)</span><br><span class="line">print</span><br><span class="line">print C</span><br></pre></td></tr></table></figure></li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[[1 2]</span><br><span class="line"> [3 4]</span><br><span class="line"> [5 6]]</span><br><span class="line"></span><br><span class="line">[[1]</span><br><span class="line"> [2]</span><br><span class="line"> [3]]</span><br><span class="line"></span><br><span class="line">[[1 2 1]</span><br><span class="line"> [3 4 2]</span><br><span class="line"> [5 6 3]]</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjmvb7vdf000esru86cmt7ro5" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjmygmknz0009c2u8p5ssyjfc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -351,7 +415,7 @@
 <li>Initialization:Each class variable, instance variable, or array component is initialized with a default value when it is created:</li>
 </ul>
 <blockquote>
-<p>For type byte, the default value is zero, that is, the value of (byte)0;<br>For type short, the default value is zero, that is, the value of (short)0;<br>For type int, the default value is zero, that is, 0;<br>For type long, the default value is zero, that is, 0L;<br>For type float, the default value is positive zero, that is, 0.0f;<br>For type double, the default value is positive zero, that is, 0.0d;<br>For type char, the default value is the null character, that is, ‘\u0000’;<br>For type boolean, the default value is false;<br>For all reference types (§4.3), the default value is null;</p>
+<p>For type byte, the default value is zero, that is, the value of (byte)0;<br>For type short, the default value is zero, that is, the value of (short)0;<br>For type int, the default value is zero, that is, 0;<br>For type long, the default value is zero, that is, 0L;<br>For type float, the default value is positive zero, that is, 0.0f;<br>For type double, the default value is positive zero, that is, 0.0d;<br>For type char, the default value is the null character, that is, ‘\u0000’;<br>For type boolean, the default value is false;<br>For all reference types, the default value is null;</p>
 </blockquote>
 <h2 id="Java-Language-History-and-Characteristic"><a href="#Java-Language-History-and-Characteristic" class="headerlink" title="Java-Language History and Characteristic"></a>Java-Language History and Characteristic</h2><ul>
 <li><a href="http://java.sun.com" target="_blank" rel="noopener">http://java.sun.com</a></li>
@@ -385,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Java/" data-id="cjmvb7vde000dsru8nbia1k8i" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Java/" data-id="cjmygmko3000ec2u8sef2rzf1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -438,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjmvb7vdd000asru8v3nvt7g4" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjmygmko0000ac2u8arws0goa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
@@ -479,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjmvb7vdc0009sru8cbfewmw0" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjmygmko4000gc2u8eo6kb8f2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -517,78 +581,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/DataStructure/" data-id="cjmvb7vd50001sru8yr74k6md" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/DataStructure/" data-id="cjmygmkno0000c2u83igf4o8i" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Mac-Terminal-Commands" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/29/Mac-Terminal-Commands/" class="article-date">
-  <time datetime="2018-09-30T03:47:12.000Z" itemprop="datePublished">2018-09-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/29/Mac-Terminal-Commands/">Mac Terminal Commands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Useful-Command"><a href="#Useful-Command" class="headerlink" title="Useful Command"></a>Useful Command</h2><ul>
-<li>touch: Create new file;</li>
-<li>Use quotation marks to create file of which the name contains blank space;</li>
-</ul>
-<h2 id="When-you-lose-all-your-environment-variables"><a href="#When-you-lose-all-your-environment-variables" class="headerlink" title="When you lose all your environment variables"></a>When you lose all your environment variables</h2><ul>
-<li>Type the code below in your terminal so that you can use basic terminal commands temporarily:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="See-what-are-in-PATH"><a href="#See-what-are-in-PATH" class="headerlink" title="See what are in PATH"></a>See what are in PATH</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
-<h2 id="Priority-of-environment-variables-files"><a href="#Priority-of-environment-variables-files" class="headerlink" title="Priority of environment variables files"></a>Priority of environment variables files</h2><ul>
-<li>/etc/profile &gt; /etc/paths &gt; ~/.bash_profile &gt; ~/.bash_login &gt; ~/.profile &gt; ~/.bashrc</li>
-</ul>
-<h2 id="Add-new-environment-variable"><a href="#Add-new-environment-variable" class="headerlink" title="Add new environment variable"></a>Add new environment variable</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&apos;XXXXXXXX:$PATH&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="mac下查找端口是否占用及关闭占用端口进程"><a href="#mac下查找端口是否占用及关闭占用端口进程" class="headerlink" title="mac下查找端口是否占用及关闭占用端口进程"></a>mac下查找端口是否占用及关闭占用端口进程</h2><ul>
-<li>lsof -i:[port]</li>
-<li>kill -9 [PID</li>
-</ul>
-<h2 id="mac终端后台运行程序与查看"><a href="#mac终端后台运行程序与查看" class="headerlink" title="mac终端后台运行程序与查看"></a>mac终端后台运行程序与查看</h2><ul>
-<li>control+z将进程丢到后台并且暂停</li>
-<li>jobs查看后台进程编号</li>
-<li>fg [N]把进程放到前台执行</li>
-<li>bg [N]把进程放到后台执行</li>
-<li>&amp; 运行命令时，在命令末尾加上&amp;可让命令在后台执行</li>
-</ul>
-<h2 id="Linux改变目录读写权限"><a href="#Linux改变目录读写权限" class="headerlink" title="Linux改变目录读写权限"></a>Linux改变目录读写权限</h2><ul>
-<li>sudo chmod 777 -R [directory] 把该文件目录设为人人可读写</li>
-</ul>
-<h2 id="Linux切换文件夹Python版本"><a href="#Linux切换文件夹Python版本" class="headerlink" title="Linux切换文件夹Python版本"></a>Linux切换文件夹Python版本</h2><ol>
-<li>进入该文件夹</li>
-<li>pyenv local anaconda2-4.0.0</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/09/29/Mac-Terminal-Commands/" data-id="cjmvb7vda0005sru8uelcuhq2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
-
     </footer>
   </div>
   
@@ -646,6 +641,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/07/Machine-Learning/">Notes for Machine Learning</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/04/LeetCode/">LeetCode Coding Diary</a>
           </li>
         
@@ -659,10 +658,6 @@
         
           <li>
             <a href="/2018/10/02/Notes-for-SQL/">Notes for SQL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/02/Notes-for-Python/">Notes for Python</a>
           </li>
         
       </ul>
