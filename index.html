@@ -62,6 +62,104 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Notes-for-Java" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/22/Notes-for-Java/" class="article-date">
+  <time datetime="2018-10-23T02:33:00.000Z" itemprop="datePublished">2018-10-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/22/Notes-for-Java/">Notes for Java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>final: In the Java programming language, the final keyword is used in several contexts to define an entity that can only be assigned once;</li>
+<li>Pair: <a href="https://www.geeksforgeeks.org/pair-class-in-java/" target="_blank" rel="noopener">click here</a>;</li>
+<li>To compare char or Character, you can use both ‘equals’ method or ‘==’;</li>
+</ul>
+<h2 id="Run-Java-through-terminal"><a href="#Run-Java-through-terminal" class="headerlink" title="Run Java through terminal"></a>Run Java through terminal</h2><ul>
+<li>First run <code>javac xxx_filePath.java</code> then run <code>java xxx_filePath</code></li>
+<li>If the java program you run rely on a an external library <em>JAR</em>, first run <code>javac -cp JAR_filePath xxx_filePath.java</code> then run <code>java -cp .:JAR_filePath xxx</code></li>
+</ul>
+<h2 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h2><ul>
+<li><a href="https://www.mkyong.com/java/java-generate-random-integers-in-a-range/" target="_blank" rel="noopener">java.util.Random</a></li>
+</ul>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ul>
+<li>In Java, List is an interface instead of a concrete class, to see different between Array, List, ArrayList: <a href="https://www.youtube.com/watch?v=WjGu_DLeagU" target="_blank" rel="noopener">click here</a></li>
+<li>First and Major difference between Array and ArrayList in Java is that Array is a fixed length data structure while ArrayList is a variable length Collection class. You can not store primitives in ArrayList, it can only contain Objects. While Array can contain both primitives and Objects in Java.</li>
+<li>primitive data type uses a small amount of memory to represent a single item of data. All data of the same primitive type are the same size; For example, primitive type int represents integers using 32 bits. All variables of type int use 32 bits; There are only eight primitive data types in Java: byte, short, int, long, float, double, char, and boolean. A Java program cannot define any other primitive data types; An object is a large chunk of memory that can potentially contain a great deal of data along with methods (little programs) to process that data. There are thousands of object classes that come standard with Java, and a programmer can easily create additional classes. (Although there are thousands of standard classes, for this course you only need become familiar with a dozen or so classes.)</li>
+</ul>
+<h2 id="Exception-Handle"><a href="#Exception-Handle" class="headerlink" title="Exception Handle"></a>Exception Handle</h2><ul>
+<li>Write sub class before;</li>
+<li>finally statement will execute no matter there are exceptions or not and even if there is a return before;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"Enter first num: "</span>);</span><br><span class="line">                <span class="keyword">int</span> n1 = input.nextInt();</span><br><span class="line">                System.out.println(<span class="string">"Enter second num: "</span>);</span><br><span class="line">                <span class="keyword">int</span> n2 = input.nextInt();</span><br><span class="line">                <span class="keyword">int</span> division = n1/n2;</span><br><span class="line">                System.out.println(division);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">                System.out.println(<span class="string">"Denominator can't be zero!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><ul>
+<li>When initializing an array, define and assign space respectively;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> []a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Initialization:Each class variable, instance variable, or array component is initialized with a default value when it is created:</li>
+</ul>
+<blockquote>
+<p>For type byte, the default value is zero, that is, the value of (byte)0;<br>For type short, the default value is zero, that is, the value of (short)0;<br>For type int, the default value is zero, that is, 0;<br>For type long, the default value is zero, that is, 0L;<br>For type float, the default value is positive zero, that is, 0.0f;<br>For type double, the default value is positive zero, that is, 0.0d;<br>For type char, the default value is the null character, that is, ‘\u0000’;<br>For type boolean, the default value is false;<br>For all reference types, the default value is null;</p>
+</blockquote>
+<h2 id="Java-Language-History-and-Characteristic"><a href="#Java-Language-History-and-Characteristic" class="headerlink" title="Java-Language History and Characteristic"></a>Java-Language History and Characteristic</h2><ul>
+<li><a href="http://java.sun.com" target="_blank" rel="noopener">http://java.sun.com</a></li>
+</ul>
+<h3 id="Classification-Three-Develop-Platform"><a href="#Classification-Three-Develop-Platform" class="headerlink" title="Classification(Three Develop Platform)"></a>Classification(Three Develop Platform)</h3><ul>
+<li>Java SE：Desktop App</li>
+<li>Java EE：Web App</li>
+<li>Java ME：Mobile App</li>
+</ul>
+<h3 id="Characteristic"><a href="#Characteristic" class="headerlink" title="Characteristic"></a>Characteristic</h3><ul>
+<li>JDK(Java Development Kit) = JRE + Tools</li>
+<li>Inter-Platform</li>
+</ul>
+<h3 id="Difference-Between-C"><a href="#Difference-Between-C" class="headerlink" title="Difference Between C++"></a>Difference Between C++</h3><ul>
+<li>无直接指针操作</li>
+<li>自动内存管理</li>
+<li>数据类型长度固定 </li>
+<li>不用头文件</li>
+<li>不包含结构和联合 </li>
+<li>不支持宏</li>
+<li>不用多重继承</li>
+<li>无类外全局变量</li>
+<li>无GOTO</li>
+</ul>
+<h3 id="Core-Machanism"><a href="#Core-Machanism" class="headerlink" title="Core Machanism"></a>Core Machanism</h3><ul>
+<li>Java Virtual Machine: JRE(The Java Runtime Environment) = JVM + API(Lib)</li>
+<li>Code Security</li>
+<li>Garbage collection</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/10/22/Notes-for-Java/" data-id="cjnkzyup70004l6u8ghxik4vo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Algorithm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/19/Algorithm/" class="article-date">
@@ -176,104 +274,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/19/Algorithm/" data-id="cjngnljzy0001uaa7qui8ggq0" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/19/Algorithm/" data-id="cjnkzyup80005l6u88ysyffev" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Notes-for-Java" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/14/Notes-for-Java/" class="article-date">
-  <time datetime="2018-10-14T05:00:00.000Z" itemprop="datePublished">2018-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/14/Notes-for-Java/">Notes for Java</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>final: In the Java programming language, the final keyword is used in several contexts to define an entity that can only be assigned once;</li>
-<li>Pair: <a href="https://www.geeksforgeeks.org/pair-class-in-java/" target="_blank" rel="noopener">click here</a>;</li>
-<li>To compare char or Character, you can use both ‘equals’ method or ‘==’;</li>
-</ul>
-<h2 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h2><ul>
-<li><a href="https://www.mkyong.com/java/java-generate-random-integers-in-a-range/" target="_blank" rel="noopener">java.util.Random</a></li>
-</ul>
-<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ul>
-<li>In Java, List is an interface instead of a concrete class, to see different between Array, List, ArrayList: <a href="https://www.youtube.com/watch?v=WjGu_DLeagU" target="_blank" rel="noopener">click here</a></li>
-<li>First and Major difference between Array and ArrayList in Java is that Array is a fixed length data structure while ArrayList is a variable length Collection class. You can not store primitives in ArrayList, it can only contain Objects. While Array can contain both primitives and Objects in Java.</li>
-<li>primitive data type uses a small amount of memory to represent a single item of data. All data of the same primitive type are the same size; For example, primitive type int represents integers using 32 bits. All variables of type int use 32 bits; There are only eight primitive data types in Java: byte, short, int, long, float, double, char, and boolean. A Java program cannot define any other primitive data types; An object is a large chunk of memory that can potentially contain a great deal of data along with methods (little programs) to process that data. There are thousands of object classes that come standard with Java, and a programmer can easily create additional classes. (Although there are thousands of standard classes, for this course you only need become familiar with a dozen or so classes.)</li>
-</ul>
-<h2 id="Exception-Handle"><a href="#Exception-Handle" class="headerlink" title="Exception Handle"></a>Exception Handle</h2><ul>
-<li>Write sub class before;</li>
-<li>finally statement will execute no matter there are exceptions or not and even if there is a return before;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"Enter first num: "</span>);</span><br><span class="line">                <span class="keyword">int</span> n1 = input.nextInt();</span><br><span class="line">                System.out.println(<span class="string">"Enter second num: "</span>);</span><br><span class="line">                <span class="keyword">int</span> n2 = input.nextInt();</span><br><span class="line">                <span class="keyword">int</span> division = n1/n2;</span><br><span class="line">                System.out.println(division);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">                System.out.println(<span class="string">"Denominator can't be zero!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><ul>
-<li>When initializing an array, define and assign space respectively;</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> []a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Initialization:Each class variable, instance variable, or array component is initialized with a default value when it is created:</li>
-</ul>
-<blockquote>
-<p>For type byte, the default value is zero, that is, the value of (byte)0;<br>For type short, the default value is zero, that is, the value of (short)0;<br>For type int, the default value is zero, that is, 0;<br>For type long, the default value is zero, that is, 0L;<br>For type float, the default value is positive zero, that is, 0.0f;<br>For type double, the default value is positive zero, that is, 0.0d;<br>For type char, the default value is the null character, that is, ‘\u0000’;<br>For type boolean, the default value is false;<br>For all reference types, the default value is null;</p>
-</blockquote>
-<h2 id="Java-Language-History-and-Characteristic"><a href="#Java-Language-History-and-Characteristic" class="headerlink" title="Java-Language History and Characteristic"></a>Java-Language History and Characteristic</h2><ul>
-<li><a href="http://java.sun.com" target="_blank" rel="noopener">http://java.sun.com</a></li>
-</ul>
-<h3 id="Classification-Three-Develop-Platform"><a href="#Classification-Three-Develop-Platform" class="headerlink" title="Classification(Three Develop Platform)"></a>Classification(Three Develop Platform)</h3><ul>
-<li>Java SE：Desktop App</li>
-<li>Java EE：Web App</li>
-<li>Java ME：Mobile App</li>
-</ul>
-<h3 id="Characteristic"><a href="#Characteristic" class="headerlink" title="Characteristic"></a>Characteristic</h3><ul>
-<li>JDK(Java Development Kit) = JRE + Tools</li>
-<li>Inter-Platform</li>
-</ul>
-<h3 id="Difference-Between-C"><a href="#Difference-Between-C" class="headerlink" title="Difference Between C++"></a>Difference Between C++</h3><ul>
-<li>无直接指针操作</li>
-<li>自动内存管理</li>
-<li>数据类型长度固定 </li>
-<li>不用头文件</li>
-<li>不包含结构和联合 </li>
-<li>不支持宏</li>
-<li>不用多重继承</li>
-<li>无类外全局变量</li>
-<li>无GOTO</li>
-</ul>
-<h3 id="Core-Machanism"><a href="#Core-Machanism" class="headerlink" title="Core Machanism"></a>Core Machanism</h3><ul>
-<li>Java Virtual Machine: JRE(The Java Runtime Environment) = JVM + API(Lib)</li>
-<li>Code Security</li>
-<li>Garbage collection</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/14/Notes-for-Java/" data-id="cjngnlk09000euaa7g4bauiv4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 
     </footer>
   </div>
@@ -311,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-Latex/" data-id="cjngnlk08000cuaa7l8pd3xcw" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-Latex/" data-id="cjnkzyupd0009l6u8jwly16xp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/latex/">latex</a></li></ul>
@@ -369,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-SQL/" data-id="cjngnlk0c000juaa7mibjsv8f" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-SQL/" data-id="cjnkzyupj000gl6u8lezhh5w0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -432,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/07/Machine-Learning/" data-id="cjngnlk030005uaa73oq8o82k" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/07/Machine-Learning/" data-id="cjnkzyupc0008l6u85djtl8l9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
@@ -471,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjngnlk0d000luaa7ztw8v1is" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjnkzyupk000il6u89uh0bkvy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -532,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjngnlk0b000guaa7cuqgcvdc" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjnkzyupi000fl6u88gfhrzif" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -585,7 +589,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjngnlk060009uaa79bz55b57" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjnkzyupf000cl6u8s0c22tgb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
@@ -626,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjngnlk07000buaa74a2toh66" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjnkzyuph000dl6u8aur3hhse" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -695,7 +699,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/09/29/Mac-Terminal-Commands/" data-id="cjngnlk040006uaa7jxghmgww" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/09/29/Mac-Terminal-Commands/" data-id="cjnkzyupb0007l6u8istwnrh7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
@@ -757,11 +761,11 @@
       <ul>
         
           <li>
-            <a href="/2018/10/19/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
+            <a href="/2018/10/22/Notes-for-Java/">Notes for Java</a>
           </li>
         
           <li>
-            <a href="/2018/10/14/Notes-for-Java/">Notes for Java</a>
+            <a href="/2018/10/19/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
           </li>
         
           <li>
