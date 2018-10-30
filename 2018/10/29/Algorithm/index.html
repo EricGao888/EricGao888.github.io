@@ -11,11 +11,11 @@
 <meta name="keywords" content="algorithm,data_structure,leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Notes for Algorithm &amp; Data Structure">
-<meta property="og:url" content="https://EricGao888.github.io/2018/10/19/Algorithm/index.html">
+<meta property="og:url" content="https://EricGao888.github.io/2018/10/29/Algorithm/index.html">
 <meta property="og:site_name" content="Eric&#39;s Fantasy">
 <meta property="og:description" content="Dynamic Programming Concept Convert New Problem into Knapsack Problem  General Solution for DP Consider all the possible strategies or conditions in the $Cth$ step; Treat previous state as known, for">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-20T19:09:56.049Z">
+<meta property="og:updated_time" content="2018-10-30T01:48:40.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Notes for Algorithm &amp; Data Structure">
 <meta name="twitter:description" content="Dynamic Programming Concept Convert New Problem into Knapsack Problem  General Solution for DP Consider all the possible strategies or conditions in the $Cth$ step; Treat previous state as known, for">
@@ -67,8 +67,8 @@
       <div class="outer">
         <section id="main"><article id="post-Algorithm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/19/Algorithm/" class="article-date">
-  <time datetime="2018-10-19T18:35:00.000Z" itemprop="datePublished">2018-10-19</time>
+    <a href="/2018/10/29/Algorithm/" class="article-date">
+  <time datetime="2018-10-29T20:00:00.000Z" itemprop="datePublished">2018-10-29</time>
 </a>
     
   </div>
@@ -118,12 +118,22 @@
 <li>递归由递推和回归两部分组成，递推是把复杂的问题的求解推到比原问题简单一些的问题的求解；回归是当获得最简单的情况后，逐步返回，依次得到复杂的解；</li>
 <li>所以利用递归来解决问题，获得的最简单情况是已知答案的，是可以直接给出该情况下的结果的；</li>
 </ul>
-<h2 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h2><ul>
-<li><a href="https://leetcode.com/explore/learn/card/hash-table/" target="_blank" rel="noopener">LeetCode Tutorial</a></li>
+<h2 id="Cotent"><a href="#Cotent" class="headerlink" title="Cotent"></a>Cotent</h2><ul>
+<li><a href="#reference">Reference</a></li>
+</ul>
+<h2 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h2><h3 id="Java-Application"><a href="#Java-Application" class="headerlink" title="Java Application"></a>Java Application</h3><ul>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/183/combination-with-other-algorithms/1130/" target="_blank" rel="noopener">Hash Set</a></li>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1129/" target="_blank" rel="noopener">Hash Map</a></li>
+</ul>
+<h3 id="LeetCode-Tutorial"><a href="#LeetCode-Tutorial" class="headerlink" title="LeetCode Tutorial"></a><a href="https://leetcode.com/explore/learn/card/hash-table/" target="_blank" rel="noopener">LeetCode Tutorial</a></h3><ul>
 <li>Two ways to construct Hash Table - <code>Separate Chaining</code> and <code>Linear Probing</code></li>
 <li>There are two different kinds of hash tables: <code>hash set</code> and <code>hash map</code>;</li>
 <li>Typically, if N is constant and small, we can simply use an <code>array</code> to store keys in the same bucket. If N is variable or large, we might need to use <code>height-balanced binary search tree</code> instead;</li>
 <li><code>Insertion</code> and <code>search</code> are two basic operations in a hash table. Besides, there are operations which are based on these two operations. For example, when we <code>remove</code> an element, we will first <code>search</code> the element and then remove the element from the corresponding position if the element exists.</li>
+</ul>
+<h3 id="Delete-Elements-in-Hash-Table-Implemented-by-Linear-Probing"><a href="#Delete-Elements-in-Hash-Table-Implemented-by-Linear-Probing" class="headerlink" title="Delete Elements in Hash Table Implemented by Linear Probing"></a>Delete Elements in Hash Table Implemented by Linear Probing</h3><ul>
+<li>The easiest way to implement delete is to find and remove the key–value pair and then to reinsert all of the key–value pairs in the same cluster that appear after the deleted key–value pair. If the hash table doesn’t get too full, the expected number of key–value pairs to reinsert will be a small constant.</li>
+<li>An alternative is to flag the deleted linear-probing table entry so that it is skipped over during a search but is used for an insertion. If there are too many flagged entries, create a new hash table and rehash all key–value pairs.</li>
 </ul>
 <h3 id="Time-and-Space-Complexity-Analysis"><a href="#Time-and-Space-Complexity-Analysis" class="headerlink" title="Time and Space Complexity Analysis"></a>Time and Space Complexity Analysis</h3><ul>
 <li><a href="https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1111/" target="_blank" rel="noopener">click here</a></li>
@@ -166,20 +176,22 @@
 <h3 id="Isomorphic-Strings-LC"><a href="#Isomorphic-Strings-LC" class="headerlink" title="Isomorphic Strings(LC)"></a><a href="https://leetcode.com/problems/isomorphic-strings/description/" target="_blank" rel="noopener">Isomorphic Strings(LC)</a></h3><ul>
 <li><a href="https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1117/discuss/57802/Java-solution-using-HashMap" target="_blank" rel="noopener">HashMap Solution</a></li>
 </ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li>LeetCode</li>
-<li>Youtube</li>
+<h2 id="Use-of-XOR"><a href="#Use-of-XOR" class="headerlink" title="Use of XOR"></a>Use of XOR</h2><ul>
+<li><a href="https://leetcode.com/articles/single-number/" target="_blank" rel="noopener">See approach 4</a></li>
 </ul>
-<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The hash function is computed modulo the size of a reference vector that is much smaller than the hash function range.</span><br><span class="line">Because this value is fixed, it is not considered in the space complexity computation. </span><br><span class="line">Consequently, the space complexity of every reasonable hash table is O(n).</span><br></pre></td></tr></table></figure>
 <h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2><h3 id="Majority-Element-LC169"><a href="#Majority-Element-LC169" class="headerlink" title="Majority Element(LC169)"></a><a href="https://leetcode.com/problems/majority-element/description/" target="_blank" rel="noopener">Majority Element(LC169)</a></h3><ul>
 <li><a href="https://leetcode.com/problems/majority-element/solution/" target="_blank" rel="noopener">Solution</a></li>
 <li>For the approach four, use ArrayList instead of Array, and remove the element we choose each time, thus it wouldn’t happen that we might never get the <em>majority element</em>;</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>LeetCode</li>
+<li>Youtube</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/19/Algorithm/" data-id="cjnkzyup80005l6u88ysyffev" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/29/Algorithm/" data-id="cjnv2qqt900033su8givfgni3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -190,19 +202,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/10/22/Notes-for-Java/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Notes for Java
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/11/Notes-for-Latex/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/10/29/Notes-for-Java/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Notes for Latex</div>
+      <div class="article-nav-title">Notes for Java</div>
     </a>
   
 </nav>
@@ -253,11 +256,11 @@
       <ul>
         
           <li>
-            <a href="/2018/10/22/Notes-for-Java/">Notes for Java</a>
+            <a href="/2018/10/29/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
           </li>
         
           <li>
-            <a href="/2018/10/19/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
+            <a href="/2018/10/29/Notes-for-Java/">Notes for Java</a>
           </li>
         
           <li>
