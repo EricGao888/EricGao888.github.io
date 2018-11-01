@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Eric&#39;s Fantasy">
 <meta property="og:description" content="Dynamic Programming Concept Convert New Problem into Knapsack Problem  General Solution for DP Consider all the possible strategies or conditions in the $Cth$ step; Treat previous state as known, for">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-30T01:48:40.583Z">
+<meta property="og:updated_time" content="2018-10-31T04:52:15.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Notes for Algorithm &amp; Data Structure">
 <meta name="twitter:description" content="Dynamic Programming Concept Convert New Problem into Knapsack Problem  General Solution for DP Consider all the possible strategies or conditions in the $Cth$ step; Treat previous state as known, for">
@@ -103,7 +103,11 @@
 <li>Don’t think too much about global optimal and local optimal. Different from <em>Greedy Algo</em>, <em>DP</em> is a kind of <strong><em>State Machine</em></strong>. <em>Greedy</em> takes local optimal at every step and that corresponds to the global optimal. However, in many cases, taking local optimal at each step will not lead to global optimal. <em>DP</em> memorizes the previous state and decide the current state based on combinations and modifications of previous state; </li>
 <li>In <em>DP</em> we ofte see the initialization of meaningless state(before start or after end) as zero;</li>
 </ul>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Coins-in-a-line"><a href="#Coins-in-a-line" class="headerlink" title="Coins in a line"></a><a href="https://articles.leetcode.com/coins-in-line/" target="_blank" rel="noopener">Coins in a line</a></h4><h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2><ol>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Coins-in-a-line"><a href="#Coins-in-a-line" class="headerlink" title="Coins in a line"></a><a href="https://articles.leetcode.com/coins-in-line/" target="_blank" rel="noopener">Coins in a line</a></h4><h2 id="Shortest-Path"><a href="#Shortest-Path" class="headerlink" title="Shortest Path"></a>Shortest Path</h2><ul>
+<li>Dijkstra: 基于贪心，在此每步取局部最优最终能达到全局最优。每次新扩展一个路程最短的点，更新与其相邻的点点路程。当所有遍权都为正时，由于不会存在一个路程更短的没扩展过的点，所以这个点的路程永远不会再改变，因而保证了算法的正确性。因此次算法不适用于含负权边的图，否则会破坏<strong><em>已经更新的点路程不会改变的性质</em></strong>；</li>
+<li>Bellman-Ford<h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2></li>
+</ul>
+<ol>
 <li>Divide</li>
 <li>Conquer</li>
 <li><strong>Combine</strong>: This part you need to think the correctness of your algo;</li>
@@ -183,7 +187,7 @@
 <li><a href="https://leetcode.com/problems/majority-element/solution/" target="_blank" rel="noopener">Solution</a></li>
 <li>For the approach four, use ArrayList instead of Array, and remove the element we choose each time, thus it wouldn’t happen that we might never get the <em>majority element</em>;</li>
 </ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
 <li>LeetCode</li>
 <li>Youtube</li>
 </ul>
@@ -191,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/29/Algorithm/" data-id="cjnv2qqt900033su8givfgni3" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/29/Algorithm/" data-id="cjnxws55h00007yu89bksborb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -201,6 +205,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/10/31/Resources/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Resources for Computer Science
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/29/Notes-for-Java/" id="article-nav-older" class="article-nav-link-wrap">
@@ -224,7 +237,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resources/">resources</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
     </div>
   </div>
 
@@ -234,7 +247,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data_structure</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
+      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data_structure</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/resources/" style="font-size: 10px;">resources</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
     </div>
   </div>
 
@@ -256,6 +269,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/31/Resources/">Resources for Computer Science</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/29/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
           </li>
         
@@ -269,10 +286,6 @@
         
           <li>
             <a href="/2018/10/11/Notes-for-SQL/">Notes for SQL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/07/Machine-Learning/">Notes for Machine Learning</a>
           </li>
         
       </ul>

@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Resources" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/31/Resources/" class="article-date">
+  <time datetime="2018-11-01T01:07:28.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/31/Resources/">Resources for Computer Science</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="GitHub-Reference"><a href="#GitHub-Reference" class="headerlink" title="GitHub Reference"></a>GitHub Reference</h2><ul>
+<li><a href="https://ericgao888.github.io">try.github.io</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/10/31/Resources/" data-id="cjnxws55u000b7yu8aaicngyq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resources/">resources</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Algorithm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/29/Algorithm/" class="article-date">
@@ -100,7 +141,11 @@
 <li>Don’t think too much about global optimal and local optimal. Different from <em>Greedy Algo</em>, <em>DP</em> is a kind of <strong><em>State Machine</em></strong>. <em>Greedy</em> takes local optimal at every step and that corresponds to the global optimal. However, in many cases, taking local optimal at each step will not lead to global optimal. <em>DP</em> memorizes the previous state and decide the current state based on combinations and modifications of previous state; </li>
 <li>In <em>DP</em> we ofte see the initialization of meaningless state(before start or after end) as zero;</li>
 </ul>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Coins-in-a-line"><a href="#Coins-in-a-line" class="headerlink" title="Coins in a line"></a><a href="https://articles.leetcode.com/coins-in-line/" target="_blank" rel="noopener">Coins in a line</a></h4><h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2><ol>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Coins-in-a-line"><a href="#Coins-in-a-line" class="headerlink" title="Coins in a line"></a><a href="https://articles.leetcode.com/coins-in-line/" target="_blank" rel="noopener">Coins in a line</a></h4><h2 id="Shortest-Path"><a href="#Shortest-Path" class="headerlink" title="Shortest Path"></a>Shortest Path</h2><ul>
+<li>Dijkstra: 基于贪心，在此每步取局部最优最终能达到全局最优。每次新扩展一个路程最短的点，更新与其相邻的点点路程。当所有遍权都为正时，由于不会存在一个路程更短的没扩展过的点，所以这个点的路程永远不会再改变，因而保证了算法的正确性。因此次算法不适用于含负权边的图，否则会破坏<strong><em>已经更新的点路程不会改变的性质</em></strong>；</li>
+<li>Bellman-Ford<h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2></li>
+</ul>
+<ol>
 <li>Divide</li>
 <li>Conquer</li>
 <li><strong>Combine</strong>: This part you need to think the correctness of your algo;</li>
@@ -180,7 +225,7 @@
 <li><a href="https://leetcode.com/problems/majority-element/solution/" target="_blank" rel="noopener">Solution</a></li>
 <li>For the approach four, use ArrayList instead of Array, and remove the element we choose each time, thus it wouldn’t happen that we might never get the <em>majority element</em>;</li>
 </ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
 <li>LeetCode</li>
 <li>Youtube</li>
 </ul>
@@ -188,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/29/Algorithm/" data-id="cjnv2qqt900033su8givfgni3" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/29/Algorithm/" data-id="cjnxws55h00007yu89bksborb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
@@ -285,11 +330,14 @@
 <li>Code Security</li>
 <li>Garbage collection</li>
 </ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><ul>
+<li><a href="https://www.tutorialspoint.com/java/java_string_valueof.htm" target="_blank" rel="noopener">String.valueOf()</a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/29/Notes-for-Java/" data-id="cjnv2qqth000b3su8je5d6wv4" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/29/Notes-for-Java/" data-id="cjnxws55r00077yu8390yoz7m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -330,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-Latex/" data-id="cjnv2qqtg000a3su870a8a2p1" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-Latex/" data-id="cjnxws55t000a7yu8mhsepbak" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/latex/">latex</a></li></ul>
@@ -388,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-SQL/" data-id="cjnv2qqtm000e3su86t2vt5uo" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-SQL/" data-id="cjnxws56a000w7yu82puyasq7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -451,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/07/Machine-Learning/" data-id="cjnv2qqtc00063su8n2yy1dx3" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/07/Machine-Learning/" data-id="cjnxws55s00087yu81ospg819" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
@@ -490,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjnv2qqto000i3su8tatvjb7u" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjnxws56b000x7yu8372ydk2r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -551,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjnv2qqtm000d3su8tu77z2hg" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjnxws55v000d7yu8ibxg4prk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -604,7 +652,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjnv2qqte00083su8aysu1f21" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjnxws55q00057yu8jf3z7eh9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
@@ -645,79 +693,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjnv2qqtd00073su88gjjzvu2" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjnxws55n00037yu80binsjno" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Mac-Terminal-Commands" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/29/Mac-Terminal-Commands/" class="article-date">
-  <time datetime="2018-09-30T03:47:12.000Z" itemprop="datePublished">2018-09-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/29/Mac-Terminal-Commands/">Mac Terminal Commands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Useful-Command"><a href="#Useful-Command" class="headerlink" title="Useful Command"></a>Useful Command</h2><ul>
-<li>touch: Create new file;</li>
-<li>Use quotation marks to create file of which the name contains blank space;</li>
-</ul>
-<h2 id="When-you-lose-all-your-environment-variables"><a href="#When-you-lose-all-your-environment-variables" class="headerlink" title="When you lose all your environment variables"></a>When you lose all your environment variables</h2><ul>
-<li>Type the code below in your terminal so that you can use basic terminal commands temporarily:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="See-what-are-in-PATH"><a href="#See-what-are-in-PATH" class="headerlink" title="See what are in PATH"></a>See what are in PATH</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
-<h2 id="Priority-of-environment-variables-files"><a href="#Priority-of-environment-variables-files" class="headerlink" title="Priority of environment variables files"></a>Priority of environment variables files</h2><ul>
-<li>/etc/profile &gt; /etc/paths &gt; ~/.bash_profile &gt; ~/.bash_login &gt; ~/.profile &gt; ~/.bashrc</li>
-</ul>
-<h2 id="Add-new-environment-variable"><a href="#Add-new-environment-variable" class="headerlink" title="Add new environment variable"></a>Add new environment variable</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&apos;XXXXXXXX:$PATH&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="mac下查找端口是否占用及关闭占用端口进程"><a href="#mac下查找端口是否占用及关闭占用端口进程" class="headerlink" title="mac下查找端口是否占用及关闭占用端口进程"></a>mac下查找端口是否占用及关闭占用端口进程</h2><ul>
-<li>lsof -i:[port]</li>
-<li>kill -9 [PID</li>
-</ul>
-<h2 id="mac终端后台运行程序与查看"><a href="#mac终端后台运行程序与查看" class="headerlink" title="mac终端后台运行程序与查看"></a>mac终端后台运行程序与查看</h2><ul>
-<li>control+z将进程丢到后台并且暂停</li>
-<li>jobs查看后台进程编号</li>
-<li>fg [N]把进程放到前台执行</li>
-<li>bg [N]把进程放到后台执行</li>
-<li>&amp; 运行命令时，在命令末尾加上&amp;可让命令在后台执行</li>
-</ul>
-<h2 id="Linux改变目录读写权限"><a href="#Linux改变目录读写权限" class="headerlink" title="Linux改变目录读写权限"></a>Linux改变目录读写权限</h2><ul>
-<li>sudo chmod 777 -R [directory] 把该文件目录设为人人可读写</li>
-</ul>
-<h2 id="Linux切换文件夹Python版本"><a href="#Linux切换文件夹Python版本" class="headerlink" title="Linux切换文件夹Python版本"></a>Linux切换文件夹Python版本</h2><ol>
-<li>进入该文件夹</li>
-<li>pyenv local anaconda2-4.0.0</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/09/29/Mac-Terminal-Commands/" data-id="cjnv2qqto000g3su8frm6ertk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
 
     </footer>
   </div>
@@ -744,7 +723,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resources/">resources</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
     </div>
   </div>
 
@@ -754,7 +733,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data_structure</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
+      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data_structure</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/resources/" style="font-size: 10px;">resources</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
     </div>
   </div>
 
@@ -776,6 +755,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/31/Resources/">Resources for Computer Science</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/29/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
           </li>
         
@@ -789,10 +772,6 @@
         
           <li>
             <a href="/2018/10/11/Notes-for-SQL/">Notes for SQL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/07/Machine-Learning/">Notes for Machine Learning</a>
           </li>
         
       </ul>
