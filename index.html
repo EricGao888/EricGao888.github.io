@@ -62,6 +62,153 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-TwoPointers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/17/TwoPointers/" class="article-date">
+  <time datetime="2018-11-18T00:05:01.000Z" itemprop="datePublished">2018-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/17/TwoPointers/">TwoPointers &amp; Sliding Window</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Two-Pointers"><a href="#Two-Pointers" class="headerlink" title="Two Pointers"></a>Two Pointers</h2><h2 id="Sliding-Window"><a href="#Sliding-Window" class="headerlink" title="Sliding Window"></a>Sliding Window</h2><ul>
+<li>Sliding Window is a kind of two pointers problem;</li>
+<li>Use left-closed, right-open window, so that the length of the windows exactly equals equals to $rh-lh$, pay attention to rh when it comes to array index. Don’t make the index exceed the range.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/11/17/TwoPointers/" data-id="cjom4l8yy000oj4u86vm5flem" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HashTable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/17/HashTable/" class="article-date">
+  <time datetime="2018-11-17T23:55:35.000Z" itemprop="datePublished">2018-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/17/HashTable/">HashTable</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h2><h3 id="Java-Class"><a href="#Java-Class" class="headerlink" title="Java Class"></a>Java Class</h3><ul>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/183/combination-with-other-algorithms/1130/" target="_blank" rel="noopener">Hash Set</a></li>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1129/" target="_blank" rel="noopener">Hash Map</a></li>
+</ul>
+<h3 id="Personal-Understanding"><a href="#Personal-Understanding" class="headerlink" title="Personal Understanding"></a>Personal Understanding</h3><ul>
+<li>Often used for non-repeated element problem and element counting;</li>
+<li>Often use <strong>hash map</strong> to establish a set of unique elements in an array and record their corresponding index as key value to optimze time complexity;</li>
+</ul>
+<h3 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h3><ul>
+<li>Two ways to construct Hash Table - <code>Separate Chaining</code> and <code>Linear Probing</code></li>
+<li>There are two different kinds of hash tables: <code>hash set</code> and <code>hash map</code>;</li>
+<li>Typically, if N is constant and small, we can simply use an <code>array</code> to store keys in the same bucket. If N is variable or large, we might need to use <code>height-balanced binary search tree</code> instead;</li>
+<li><code>Insertion</code> and <code>search</code> are two basic operations in a hash table. Besides, there are operations which are based on these two operations. For example, when we <code>remove</code> an element, we will first <code>search</code> the element and then remove the element from the corresponding position if the element exists.</li>
+</ul>
+<h4 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h4><ul>
+<li>The easiest way to implement delete is to find and remove the key–value pair and then to reinsert all of the key–value pairs in the same cluster that appear after the deleted key–value pair. If the hash table doesn’t get too full, the expected number of key–value pairs to reinsert will be a small constant.</li>
+<li>An alternative is to flag the deleted linear-probing table entry so that it is skipped over during a search but is used for an insertion. If there are too many flagged entries, create a new hash table and rehash all key–value pairs.</li>
+</ul>
+<h4 id="Time-and-Space-Complexity-Analysis"><a href="#Time-and-Space-Complexity-Analysis" class="headerlink" title="Time and Space Complexity Analysis"></a>Time and Space Complexity Analysis</h4><ul>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1111/" target="_blank" rel="noopener">click here</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/11/17/HashTable/" data-id="cjom4l8yi0003j4u8rnpdhhm0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure-algorithm/">data structure, algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Recursion" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/10/Recursion/" class="article-date">
+  <time datetime="2018-11-11T00:52:06.000Z" itemprop="datePublished">2018-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/10/Recursion/">Recursion</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Definition-and-Principle"><a href="#Definition-and-Principle" class="headerlink" title="Definition and Principle"></a>Definition and Principle</h2><ol>
+<li>A method that calls itself;</li>
+<li>With each method call the problem becomes simpler;</li>
+<li>Must have a condition thatr leads to the method no longer making another method call on itself;</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://www.youtube.com/watch?v=neuDuf_i8Sg" target="_blank" rel="noopener">Youtube Video</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/11/10/Recursion/" data-id="cjom4l8yt000fj4u8h5r1zhb7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Algorithm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/06/Algorithm/" class="article-date">
@@ -106,9 +253,9 @@
 </ul>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Coins-in-a-line"><a href="#Coins-in-a-line" class="headerlink" title="Coins in a line"></a><a href="https://articles.leetcode.com/coins-in-line/" target="_blank" rel="noopener">Coins in a line</a></h4><h2 id="Shortest-Path"><a href="#Shortest-Path" class="headerlink" title="Shortest Path"></a>Shortest Path</h2><ul>
 <li>Dijkstra: 基于贪心，在此每步取局部最优最终能达到全局最优。每次新扩展一个路程最短的点，更新与其相邻的点点路程。当所有遍权都为正时，由于不会存在一个路程更短的没扩展过的点，所以这个点的路程永远不会再改变，因而保证了算法的正确性。因此次算法不适用于含负权边的图，否则会破坏<strong><em>已经更新的点路程不会改变的性质</em></strong>；</li>
-<li>Bellman-Ford<h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2></li>
+<li><a href="https://en.wikipedia.org/wiki/Bellman–Ford_algorithm" target="_blank" rel="noopener">Bellman-Ford</a>: DP, i means shortest path contains i edges in i round; Compares both horizontally and vertically;</li>
 </ul>
-<ol>
+<h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2><ol>
 <li>Divide</li>
 <li>Conquer</li>
 <li><strong>Combine</strong>: This part you need to think the correctness of your algo;</li>
@@ -196,10 +343,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/11/06/Algorithm/" data-id="cjo6ouv400003i0u89l963y00" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/11/06/Algorithm/" data-id="cjom4l8yh0002j4u8j7ay56wq" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
 
     </footer>
   </div>
@@ -237,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/31/Resources/" data-id="cjo6ouv4c000gi0u89pjkswbf" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/31/Resources/" data-id="cjom4l8yz000tj4u8udwi9ru0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resources/">resources</a></li></ul>
@@ -341,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/29/Notes-for-Java/" data-id="cjo6ouv47000ai0u82k92d8rn" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/29/Notes-for-Java/" data-id="cjom4l8yp000aj4u88ph4809i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
@@ -382,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-Latex/" data-id="cjo6ouv4c000ii0u8itb6fgpo" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-Latex/" data-id="cjom4l8yo0009j4u886lkokry" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/latex/">latex</a></li></ul>
@@ -440,7 +587,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-SQL/" data-id="cjo6ouv4a000di0u8w9x9wmux" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/11/Notes-for-SQL/" data-id="cjom4l8yw000mj4u8wgpxar4a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/">SQL</a></li></ul>
@@ -503,7 +650,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/07/Machine-Learning/" data-id="cjo6ouv440006i0u8sqdp5a4u" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/07/Machine-Learning/" data-id="cjom4l8yq000cj4u8tpgrv0ue" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li></ul>
@@ -542,166 +689,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjo6ouv4d000li0u8qokfko15" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/10/02/Test/" data-id="cjom4l8yz000rj4u8vskgdu0l" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Notes-for-Python" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/02/Notes-for-Python/" class="article-date">
-  <time datetime="2018-10-02T18:51:14.000Z" itemprop="datePublished">2018-10-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/Notes-for-Python/">Notes for Python</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><ul>
-<li>Check modules installed: Enter python shell</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help(<span class="string">"modules"</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="https://ipython.readthedocs.io/en/latest/install/kernel_install.html" target="_blank" rel="noopener">Switch Python Version in Jupyter</a></li>
-<li><a href="https://conda.io/docs/user-guide/tasks/manage-environments.html?highlight=environment" target="_blank" rel="noopener">Conada Switch Python Environment</a></li>
-</ul>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><ul>
-<li>Take arguments from command line(Python 3):</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># main</span></span><br><span class="line">param_1= sys.argv[<span class="number">1</span>] </span><br><span class="line">param_2= sys.argv[<span class="number">2</span>] </span><br><span class="line">param_3= sys.argv[<span class="number">3</span>]  </span><br><span class="line">print(<span class="string">'Params='</span>, param_1, param_2, param_3)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Read idx format file</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_idx</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> gzip.open(filename, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        zero, data_type, dims = struct.unpack(<span class="string">'&gt;HBB'</span>, f.read(<span class="number">4</span>))</span><br><span class="line">        shape = tuple(struct.unpack(<span class="string">'&gt;I'</span>, f.read(<span class="number">4</span>))[<span class="number">0</span>] <span class="keyword">for</span> d <span class="keyword">in</span> range(dims))</span><br><span class="line">        <span class="keyword">return</span> np.frombuffer(f.read(), dtype=numpy.uint8).reshape(shape)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Sort a list with list element:</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> itemgetter, attrgetter</span><br><span class="line">recommenderList1 = sorted(recommenderList0,key=itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><ul>
-<li>axis: 0 down, 1 across;</li>
-<li>Convert float to int: [<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- [```numpy.argmax```](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html)</span><br><span class="line">- ```insert```:</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">A = np.array([[1,2],[3,4],[5,6]])</span><br><span class="line">B = np.array([[1],[2],[3]])</span><br><span class="line">print A</span><br><span class="line">print</span><br><span class="line">print B</span><br><span class="line">C = np.insert(A,[2],B,axis=1)</span><br><span class="line">print</span><br><span class="line">print C</span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[[1 2]</span><br><span class="line"> [3 4]</span><br><span class="line"> [5 6]]</span><br><span class="line"></span><br><span class="line">[[1]</span><br><span class="line"> [2]</span><br><span class="line"> [3]]</span><br><span class="line"></span><br><span class="line">[[1 2 1]</span><br><span class="line"> [3 4 2]</span><br><span class="line"> [5 6 3]]</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Python/" data-id="cjo6ouv4a000ei0u8z3dayr5v" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Notes-for-Golang" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/02/Notes-for-Golang/" class="article-date">
-  <time datetime="2018-10-02T18:50:57.000Z" itemprop="datePublished">2018-10-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/Notes-for-Golang/">Notes for Golang</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><ol>
-<li>必须在源文件中非注释的第一行指明这个文件属于哪个包，如：package main。package main表示一个可独立执行的程序，每个 Go 应用程序都包含一个名为 main 的包。</li>
-<li>import “fmt” 告诉 Go 编译器这个程序需要使用 fmt 包（的函数，或其他元素），fmt 包实现了格式化 IO（输入/输出）的函数。</li>
-<li>main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）。</li>
-</ol>
-<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>for 循环的 range 格式可以对 slice、map、数组、字符串等进行迭代循环。格式如下：<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> oldMap &#123;</span><br><span class="line">    newMap[key] = value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ul>
-<li>闭包就是能够读取其他函数内部变量的函数。闭包包含自由（未绑定到特定对象）变量，这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义（局部变量）。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。</li>
-<li><p>Go 语言支持匿名函数，可作为闭包。匿名函数是一个”内联”语句或表达式。匿名函数的优越性在于可以直接使用函数内的变量，不必申明。以下实例中，我们创建了函数 getSequence() ，返回另外一个函数。该函数的目的是在闭包中递增 i 变量，代码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getSequence</span><span class="params">()</span> <span class="title">func</span><span class="params">()</span> <span class="title">int</span></span> &#123;</span><br><span class="line">   i:=<span class="number">0</span></span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">int</span></span> &#123;</span><br><span class="line">      i+=<span class="number">1</span></span><br><span class="line">     <span class="keyword">return</span> i  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="comment">/* nextNumber 为一个函数，函数 i 为 0 */</span></span><br><span class="line">   nextNumber := getSequence()  </span><br><span class="line"></span><br><span class="line">   <span class="comment">/* 调用 nextNumber 函数，i 变量自增 1 并返回 */</span></span><br><span class="line">   fmt.Println(nextNumber())</span><br><span class="line">   fmt.Println(nextNumber())</span><br><span class="line">   fmt.Println(nextNumber())</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/* 创建新的函数 nextNumber1，并查看结果 */</span></span><br><span class="line">   nextNumber1 := getSequence()  </span><br><span class="line">   fmt.Println(nextNumber1())</span><br><span class="line">   fmt.Println(nextNumber1())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>以上代码执行结果为：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-Golang/" data-id="cjo6ouv48000bi0u81m29m8er" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/golang/">golang</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Notes-for-GitHub-Command" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/02/Notes-for-GitHub-Command/" class="article-date">
-  <time datetime="2018-10-02T18:50:05.000Z" itemprop="datePublished">2018-10-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/Notes-for-GitHub-Command/">Notes for GitHub Command</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="GitHub-Command"><a href="#GitHub-Command" class="headerlink" title="GitHub Command"></a>GitHub Command</h2><ul>
-<li>force push: git push -f;</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/10/02/Notes-for-GitHub-Command/" data-id="cjo6ouv450008i0u8ktp7k55t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
     </footer>
   </div>
   
@@ -727,7 +717,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resources/">resources</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure-algorithm/">data structure, algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resources/">resources</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
     </div>
   </div>
 
@@ -737,7 +727,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data_structure</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/resources/" style="font-size: 10px;">resources</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
+      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/data-structure-algorithm/" style="font-size: 10px;">data structure, algorithm</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/resources/" style="font-size: 10px;">resources</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
     </div>
   </div>
 
@@ -759,23 +749,23 @@
       <ul>
         
           <li>
+            <a href="/2018/11/17/TwoPointers/">TwoPointers &amp; Sliding Window</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/17/HashTable/">HashTable</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/10/Recursion/">Recursion</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/06/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
           </li>
         
           <li>
             <a href="/2018/10/31/Resources/">Resources for Computer Science</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/29/Notes-for-Java/">Notes for Java</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/11/Notes-for-Latex/">Notes for Latex</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/11/Notes-for-SQL/">Notes for SQL</a>
           </li>
         
       </ul>

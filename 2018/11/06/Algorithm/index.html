@@ -8,14 +8,14 @@
   <title>Notes for Algorithm &amp; Data Structure | Eric&#39;s Fantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Topological Sort Run depth first search; Return vertices in reverse postorder;  Dynamic Programming Concept Convert New Problem into Knapsack Problem  General Solution for DP Consider all the possible">
-<meta name="keywords" content="algorithm,data_structure,leetcode">
+<meta name="keywords" content="algorithm,data structure,leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Notes for Algorithm &amp; Data Structure">
 <meta property="og:url" content="https://EricGao888.github.io/2018/11/06/Algorithm/index.html">
 <meta property="og:site_name" content="Eric&#39;s Fantasy">
 <meta property="og:description" content="Topological Sort Run depth first search; Return vertices in reverse postorder;  Dynamic Programming Concept Convert New Problem into Knapsack Problem  General Solution for DP Consider all the possible">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-07T04:53:43.393Z">
+<meta property="og:updated_time" content="2018-11-17T23:57:51.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Notes for Algorithm &amp; Data Structure">
 <meta name="twitter:description" content="Topological Sort Run depth first search; Return vertices in reverse postorder;  Dynamic Programming Concept Convert New Problem into Knapsack Problem  General Solution for DP Consider all the possible">
@@ -109,9 +109,9 @@
 </ul>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Coins-in-a-line"><a href="#Coins-in-a-line" class="headerlink" title="Coins in a line"></a><a href="https://articles.leetcode.com/coins-in-line/" target="_blank" rel="noopener">Coins in a line</a></h4><h2 id="Shortest-Path"><a href="#Shortest-Path" class="headerlink" title="Shortest Path"></a>Shortest Path</h2><ul>
 <li>Dijkstra: 基于贪心，在此每步取局部最优最终能达到全局最优。每次新扩展一个路程最短的点，更新与其相邻的点点路程。当所有遍权都为正时，由于不会存在一个路程更短的没扩展过的点，所以这个点的路程永远不会再改变，因而保证了算法的正确性。因此次算法不适用于含负权边的图，否则会破坏<strong><em>已经更新的点路程不会改变的性质</em></strong>；</li>
-<li>Bellman-Ford<h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2></li>
+<li><a href="https://en.wikipedia.org/wiki/Bellman–Ford_algorithm" target="_blank" rel="noopener">Bellman-Ford</a>: DP, i means shortest path contains i edges in i round; Compares both horizontally and vertically;</li>
 </ul>
-<ol>
+<h2 id="Divide-and-Conquer"><a href="#Divide-and-Conquer" class="headerlink" title="Divide and Conquer"></a>Divide and Conquer</h2><ol>
 <li>Divide</li>
 <li>Conquer</li>
 <li><strong>Combine</strong>: This part you need to think the correctness of your algo;</li>
@@ -199,16 +199,25 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2018/11/06/Algorithm/" data-id="cjo6ouv400003i0u89l963y00" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2018/11/06/Algorithm/" data-id="cjom4l8yh0002j4u8j7ay56wq" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure/">data structure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li></ul>
 
     </footer>
   </div>
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/11/10/Recursion/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Recursion
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/31/Resources/" id="article-nav-older" class="article-nav-link-wrap">
@@ -232,7 +241,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data_structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resources/">resources</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure/">data structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structure-algorithm/">data structure, algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resources/">resources</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
     </div>
   </div>
 
@@ -242,7 +251,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data_structure</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/resources/" style="font-size: 10px;">resources</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
+      <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/data-structure/" style="font-size: 10px;">data structure</a> <a href="/tags/data-structure-algorithm/" style="font-size: 10px;">data structure, algorithm</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/resources/" style="font-size: 10px;">resources</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a>
     </div>
   </div>
 
@@ -264,23 +273,23 @@
       <ul>
         
           <li>
+            <a href="/2018/11/17/TwoPointers/">TwoPointers &amp; Sliding Window</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/17/HashTable/">HashTable</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/10/Recursion/">Recursion</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/06/Algorithm/">Notes for Algorithm &amp; Data Structure</a>
           </li>
         
           <li>
             <a href="/2018/10/31/Resources/">Resources for Computer Science</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/29/Notes-for-Java/">Notes for Java</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/11/Notes-for-Latex/">Notes for Latex</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/11/Notes-for-SQL/">Notes for SQL</a>
           </li>
         
       </ul>

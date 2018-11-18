@@ -5,15 +5,20 @@
   
 
   
-  <title>Tag: python | Eric&#39;s Fantasy</title>
+  <title>HashTable | Eric&#39;s Fantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Eric&#39;s Fantasy">
-<meta property="og:url" content="https://EricGao888.github.io/tags/python/index.html">
+  <meta name="description" content="Hash TableJava Class Hash Set Hash Map  Personal Understanding Often used for non-repeated element problem and element counting; Often use hash map to establish a set of unique elements in an array an">
+<meta name="keywords" content="data structure, algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HashTable">
+<meta property="og:url" content="https://EricGao888.github.io/2018/11/17/HashTable/index.html">
 <meta property="og:site_name" content="Eric&#39;s Fantasy">
+<meta property="og:description" content="Hash TableJava Class Hash Set Hash Map  Personal Understanding Often used for non-repeated element problem and element counting; Often use hash map to establish a set of unique elements in an array an">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-18T00:03:49.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eric&#39;s Fantasy">
+<meta name="twitter:title" content="HashTable">
+<meta name="twitter:description" content="Hash TableJava Class Hash Set Hash Map  Personal Understanding Often used for non-repeated element problem and element counting; Often use hash map to establish a set of unique elements in an array an">
   
     <link rel="alternate" href="/atom.xml" title="Eric&#39;s Fantasy" type="application/atom+xml">
   
@@ -60,40 +65,83 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/02/Notes-for-Python/" class="archive-article-date">
-  <time datetime="2018-10-02T18:51:14.000Z" itemprop="datePublished">Oct 2</time>
+        <section id="main"><article id="post-HashTable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/17/HashTable/" class="article-date">
+  <time datetime="2018-11-17T23:55:35.000Z" itemprop="datePublished">2018-11-17</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/02/Notes-for-Python/">Notes for Python</a>
+    <h1 class="article-title" itemprop="name">
+      HashTable
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h2><h3 id="Java-Class"><a href="#Java-Class" class="headerlink" title="Java Class"></a>Java Class</h3><ul>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/183/combination-with-other-algorithms/1130/" target="_blank" rel="noopener">Hash Set</a></li>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1129/" target="_blank" rel="noopener">Hash Map</a></li>
+</ul>
+<h3 id="Personal-Understanding"><a href="#Personal-Understanding" class="headerlink" title="Personal Understanding"></a>Personal Understanding</h3><ul>
+<li>Often used for non-repeated element problem and element counting;</li>
+<li>Often use <strong>hash map</strong> to establish a set of unique elements in an array and record their corresponding index as key value to optimze time complexity;</li>
+</ul>
+<h3 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h3><ul>
+<li>Two ways to construct Hash Table - <code>Separate Chaining</code> and <code>Linear Probing</code></li>
+<li>There are two different kinds of hash tables: <code>hash set</code> and <code>hash map</code>;</li>
+<li>Typically, if N is constant and small, we can simply use an <code>array</code> to store keys in the same bucket. If N is variable or large, we might need to use <code>height-balanced binary search tree</code> instead;</li>
+<li><code>Insertion</code> and <code>search</code> are two basic operations in a hash table. Besides, there are operations which are based on these two operations. For example, when we <code>remove</code> an element, we will first <code>search</code> the element and then remove the element from the corresponding position if the element exists.</li>
+</ul>
+<h4 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h4><ul>
+<li>The easiest way to implement delete is to find and remove the key–value pair and then to reinsert all of the key–value pairs in the same cluster that appear after the deleted key–value pair. If the hash table doesn’t get too full, the expected number of key–value pairs to reinsert will be a small constant.</li>
+<li>An alternative is to flag the deleted linear-probing table entry so that it is skipped over during a search but is used for an insertion. If there are too many flagged entries, create a new hash table and rehash all key–value pairs.</li>
+</ul>
+<h4 id="Time-and-Space-Complexity-Analysis"><a href="#Time-and-Space-Complexity-Analysis" class="headerlink" title="Time and Space Complexity Analysis"></a>Time and Space Complexity Analysis</h4><ul>
+<li><a href="https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1111/" target="_blank" rel="noopener">click here</a></li>
+</ul>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2018/11/17/HashTable/" data-id="cjom4l8yi0003j4u8rnpdhhm0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-structure-algorithm/">data structure, algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/17/TwoPointers/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TwoPointers &amp; Sliding Window
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/10/Recursion/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Recursion</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
