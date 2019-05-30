@@ -16,7 +16,7 @@
 <meta property="og:description" content="MVC  Both Servlet(print HTML) and JSP can create web pages without the other. In MVC pattern, JSP handles the presentation view, generate dynamic web pages, while Servlet focuses on the business logic">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ericgao888.github.io/2019/05/29/JavaMVC/mvc.jpg">
-<meta property="og:updated_time" content="2019-05-30T03:53:42.765Z">
+<meta property="og:updated_time" content="2019-05-30T03:55:59.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC with Java">
 <meta name="twitter:description" content="MVC  Both Servlet(print HTML) and JSP can create web pages without the other. In MVC pattern, JSP handles the presentation view, generate dynamic web pages, while Servlet focuses on the business logic">
@@ -103,8 +103,11 @@
 </ul>
 <h3 id="Interaction-between-Controller-and-View"><a href="#Interaction-between-Controller-and-View" class="headerlink" title="Interaction between Controller and View"></a>Interaction between Controller and View</h3><ul>
 <li>Servlet access the data from <code>request</code>.</li>
-<li>Servlet can forward the data to JSP using <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- Servlet can add data to request object.</span><br><span class="line">- JSP access the data through `request `or JSTL(brief grammar). `$&#123;&quot;data&quot;&#125;$`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">// Servlet</span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(&quot;/view-students.jsp&quot;);</span><br><span class="line">dispatch.forward(request, response);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(&quot;student_list&quot;, students);</span><br><span class="line">// JSP</span><br><span class="line">request.getAttribute(&quot;student_list&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>Servlet can forward the data to JSP using <code>Dispatcher</code>.</li>
+<li>Servlet can add data to request object.</li>
+<li>JSP access the data through <code>request</code>or JSTL(brief grammar). <code>${&quot;data&quot;}$</code></li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Servlet</span></span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/view-students.jsp"</span>);</span><br><span class="line">dispatch.forward(request, response);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(<span class="string">"student_list"</span>, students);</span><br><span class="line"><span class="comment">// JSP</span></span><br><span class="line">request.getAttribute(<span class="string">"student_list"</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h3 id="JSTL-I18N"><a href="#JSTL-I18N" class="headerlink" title="JSTL, I18N"></a>JSTL, I18N</h3><h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="doGet-and-doPost"><a href="#doGet-and-doPost" class="headerlink" title="doGet() and doPost()"></a><code>doGet()</code> and <code>doPost()</code></h3><h3 id="forward-and-redirect"><a href="#forward-and-redirect" class="headerlink" title="forward() and redirect()"></a><code>forward()</code> and <code>redirect()</code></h3><h3 id="Form-Processing"><a href="#Form-Processing" class="headerlink" title="Form Processing"></a>Form Processing</h3><h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <!--Format-->
 <!--header 1 | header 2-->
@@ -116,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwa4jfy10001xha7y624lh7d" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwa4mjo40002y2a7lcmv3kum" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
