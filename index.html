@@ -84,11 +84,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
+        <h2 id="Preview"><a href="#Preview" class="headerlink" title="Preview"></a>Preview</h2><p>In this article we discuss:</p>
+<ul>
+<li>MVC</li>
+<li>JSP(JSTL)</li>
+<li>Servlet</li>
+<li>Test</li>
+</ul>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
 <li><img src="/2019/05/29/JavaMVC/mvc.jpg" width="500px" height="300px"></li>
 <li>Both Servlet(print HTML) and JSP(embed Java in HTML: expression, scriptlet, declaration) can create web pages without the other.</li>
 <li>In MVC pattern, JSP handles the presentation view, generate dynamic web pages, while Servlet focuses on the business logic.</li>
+<li>Comparsion of JSP and Serlet when creating pages alone:</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>JSP</th>
+<th>Servlet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML file with .jsp extension.<br> Contains static HTML.<br> JSP to generate HTML.<br>Has built-in JSP objects</td>
+<td>Java class file.<br>Generate all HTML.<br>More steps to access web objects.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="Benefits-of-MVC"><a href="#Benefits-of-MVC" class="headerlink" title="Benefits of MVC"></a>Benefits of MVC</h3><ul>
 <li>Minimize the HTML code in Servlet.</li>
 <li>Minimize the business logic in JSP.</li>
@@ -102,7 +124,9 @@
 <li>Servlet access the data from <code>request</code>.</li>
 <li>Servlet can forward the data to JSP using <code>Dispatcher</code>.</li>
 <li>Servlet can add data to request object.</li>
-<li>JSP access the data through <code>request</code>or JSTL(brief grammar). <code>${&quot;data&quot;}$</code></li>
+<li>JSP access the data through <code>request</code>or JSTL(brief grammar). <code>${data}$</code></li>
+<li>JSP can redirect to Servlet using <code>response.sendRedirect(&lt;thePageUrl&gt;)</code>.</li>
+<li>User can not see the change of url when using <code>forward</code>, but can see when using <code>redirect</code>. </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Servlet</span></span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/view-students.jsp"</span>);</span><br><span class="line">dispatch.forward(request, response);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(<span class="string">"student_list"</span>, students);</span><br><span class="line"><span class="comment">// JSP</span></span><br><span class="line">request.getAttribute(<span class="string">"student_list"</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="JSP-Java-Server-Pages"><a href="#JSP-Java-Server-Pages" class="headerlink" title="JSP(Java Server Pages)"></a>JSP(Java Server Pages)</h2><h3 id="JSP-Tags"><a href="#JSP-Tags" class="headerlink" title="JSP Tags"></a>JSP Tags</h3><ul>
@@ -112,11 +136,54 @@
 </ul>
 <h3 id="JSTL-Java-Standard-Tag-Library-I18N"><a href="#JSTL-Java-Standard-Tag-Library-I18N" class="headerlink" title="JSTL(Java Standard Tag Library), I18N"></a>JSTL(Java Standard Tag Library), I18N</h3><h4 id="JSTL-Core-Tags-prefix-c"><a href="#JSTL-Core-Tags-prefix-c" class="headerlink" title="JSTL Core Tags(prefix c)"></a>JSTL Core Tags(prefix <strong><em>c</em></strong>)</h4><ul>
 <li>Include a reference for core tags. (uri not need to connect to the Internet)</li>
+<li>Loop over an array variable:</li>
 </ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">c:forEach</span> <span class="attr">var</span>=<span class="string">"tmpCity"</span> <span class="attr">items</span>=<span class="string">"$&#123;myCity&#125;"</span>&gt;</span></span><br><span class="line">	$<span class="tag">&lt;<span class="name">tmpCity</span>&gt;</span> <span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">c:forEach</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="JSTL-Function-Tags"><a href="#JSTL-Function-Tags" class="headerlink" title="JSTL Function Tags"></a>JSTL Function Tags</h4><ul>
-<li>Include a reference for function tags<h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="doGet-and-doPost"><a href="#doGet-and-doPost" class="headerlink" title="doGet() and doPost()"></a><code>doGet()</code> and <code>doPost()</code></h3><h3 id="forward-and-redirect"><a href="#forward-and-redirect" class="headerlink" title="forward() and redirect()"></a><code>forward()</code> and <code>redirect()</code></h3><h3 id="Form-Processing"><a href="#Form-Processing" class="headerlink" title="Form Processing"></a>Form Processing</h3><h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3></li>
+<li>Include a reference for function tags.</li>
+<li>Length of a string:</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">c:set</span> <span class="attr">var</span>=<span class="string">"data"</span> <span class="attr">value</span>=<span class="string">"ericsayshi"</span>/&gt;</span></span><br><span class="line">Length of the String <span class="tag">&lt;<span class="name">b</span>&gt;</span> $&#123;data&#125; <span class="tag">&lt;/<span class="name">b</span>&gt;</span>: $&#123;fn: length(data)&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Split string into array:</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">c:set</span> <span class="attr">var</span>=<span class="string">"citiesArray"</span> <span class="attr">value</span>=<span class="string">"$&#123;fn:split(data, ',')&#125;"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="I18N"><a href="#I18N" class="headerlink" title="I18N"></a>I18N</h4><ul>
+<li>JSTL uses <strong><em>Formatting Message</em></strong> labels and <strong><em>locale</em></strong> to achieve internationalization: <code>fmt:setLocale</code>, <code>fmt:bundle</code>, <code>fmt:message</code></li>
+<li>Resource Files(translated version of labels)</li>
+<li>Achieve locale from user’s selection or <code>pageContext.request.locale</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--&gt;JSP will append locale after the basename automatically.&lt;--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fmt:setLocale</span> <span class="attr">value</span>=<span class="string">"es_ES"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fmt:bundle</span> <span class="attr">basename</span>=<span class="string">"com.tutorialspoint.Example"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fmt:message</span> <span class="attr">key</span>=<span class="string">"count.one"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fmt:message</span> <span class="attr">key</span>=<span class="string">"count.two"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fmt:message</span> <span class="attr">key</span>=<span class="string">"count.three"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">fmt:bundle</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><ul>
+<li><code>Session</code> is stored in the server while <code>Cookie</code> is stored in user’s web browser.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">response.addCookie(...);</span><br><span class="line">Cookie[] theCookies = request.getCookies();</span><br></pre></td></tr></table></figure>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="Form-Processing"><a href="#Form-Processing" class="headerlink" title="Form Processing"></a>Form Processing</h3><ul>
+<li>HTML Form: <code>name=&quot;xxx&quot;</code>, <code>method=&quot;GET&quot;</code> or <code>method=&quot;POST&quot;</code>.</li>
+<li>Servlet access data through: <code>request.getParameter(&quot;xxx&quot;)</code>.</li>
+</ul>
+<h3 id="doGet-and-doPost"><a href="#doGet-and-doPost" class="headerlink" title="doGet() and doPost()"></a>doGet() and doPost()</h3><ul>
+<li>Form data appears as <code>name-value</code> pair in the URL of <code>doGet()</code> method: theUrl?field1=value1&amp;field2=value2…</li>
+<li>Form data is stored in the body of <code>request</code>(header and body) in <code>doPost()</code> method.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>doGet()</th>
+<th>doPost()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URL can be bookmarked or emailed.<br>Good for debugging.<br>Limitations on data length.</td>
+<td>URL can not be bookmarked or emailed.<br>No limitations on data length.<br> Can send binary data.<br> Form data won’t appear in the url.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3><!--```java-->
+<!--public static void main(String[] args){-->
+<!--}-->
+<!--```-->
 <!--Format-->
 <!--header 1 | header 2-->
 <!-----|----->
@@ -127,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwaar4pi000043a7tyljecpk" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwabmhfi00036oa7l2eo8xej" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
