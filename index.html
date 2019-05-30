@@ -85,9 +85,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
-<li><img src="/2019/05/29/JavaMVC/mvc.jpg" width="300px" height="200px"></li>
-<li>Both Servlet(print HTML) and JSP can create web pages without the other.</li>
-<li>In MVC pattern, JSP handles the presentation view, generate dynamic web pages, while Servlet focuses on the business logic.<h3 id="Benefits-of-MVC"><a href="#Benefits-of-MVC" class="headerlink" title="Benefits of MVC"></a>Benefits of MVC</h3></li>
+<li><img src="/2019/05/29/JavaMVC/mvc.jpg" width="500px" height="300px"></li>
+<li>Both Servlet(print HTML) and JSP(embed Java in HTML: expression, scriptlet, declaration) can create web pages without the other.</li>
+<li>In MVC pattern, JSP handles the presentation view, generate dynamic web pages, while Servlet focuses on the business logic.</li>
+</ul>
+<h3 id="Benefits-of-MVC"><a href="#Benefits-of-MVC" class="headerlink" title="Benefits of MVC"></a>Benefits of MVC</h3><ul>
 <li>Minimize the HTML code in Servlet.</li>
 <li>Minimize the business logic in JSP.</li>
 </ul>
@@ -103,7 +105,18 @@
 <li>JSP access the data through <code>request</code>or JSTL(brief grammar). <code>${&quot;data&quot;}$</code></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Servlet</span></span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/view-students.jsp"</span>);</span><br><span class="line">dispatch.forward(request, response);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(<span class="string">"student_list"</span>, students);</span><br><span class="line"><span class="comment">// JSP</span></span><br><span class="line">request.getAttribute(<span class="string">"student_list"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h3 id="JSTL-I18N"><a href="#JSTL-I18N" class="headerlink" title="JSTL, I18N"></a>JSTL, I18N</h3><h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="doGet-and-doPost"><a href="#doGet-and-doPost" class="headerlink" title="doGet() and doPost()"></a><code>doGet()</code> and <code>doPost()</code></h3><h3 id="forward-and-redirect"><a href="#forward-and-redirect" class="headerlink" title="forward() and redirect()"></a><code>forward()</code> and <code>redirect()</code></h3><h3 id="Form-Processing"><a href="#Form-Processing" class="headerlink" title="Form Processing"></a>Form Processing</h3><h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JSP-Java-Server-Pages"><a href="#JSP-Java-Server-Pages" class="headerlink" title="JSP(Java Server Pages)"></a>JSP(Java Server Pages)</h2><h3 id="JSP-Tags"><a href="#JSP-Tags" class="headerlink" title="JSP Tags"></a>JSP Tags</h3><ul>
+<li>Custom JSP Tags(Another way of avoiding heavy business logic in JSP) and JSTL.</li>
+<li>JSP Tags are reusable.</li>
+<li>JSP Tags minimize the scriptlet in JSP.</li>
+</ul>
+<h3 id="JSTL-Java-Standard-Tag-Library-I18N"><a href="#JSTL-Java-Standard-Tag-Library-I18N" class="headerlink" title="JSTL(Java Standard Tag Library), I18N"></a>JSTL(Java Standard Tag Library), I18N</h3><h4 id="JSTL-Core-Tags-prefix-c"><a href="#JSTL-Core-Tags-prefix-c" class="headerlink" title="JSTL Core Tags(prefix c)"></a>JSTL Core Tags(prefix <strong><em>c</em></strong>)</h4><ul>
+<li>Include a reference for core tags. (uri not need to connect to the Internet)</li>
+</ul>
+<h4 id="JSTL-Function-Tags"><a href="#JSTL-Function-Tags" class="headerlink" title="JSTL Function Tags"></a>JSTL Function Tags</h4><ul>
+<li>Include a reference for function tags<h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="doGet-and-doPost"><a href="#doGet-and-doPost" class="headerlink" title="doGet() and doPost()"></a><code>doGet()</code> and <code>doPost()</code></h3><h3 id="forward-and-redirect"><a href="#forward-and-redirect" class="headerlink" title="forward() and redirect()"></a><code>forward()</code> and <code>redirect()</code></h3><h3 id="Form-Processing"><a href="#Form-Processing" class="headerlink" title="Form Processing"></a>Form Processing</h3><h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <!--Format-->
 <!--header 1 | header 2-->
 <!-----|----->
@@ -114,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwa4mjo40002y2a7lcmv3kum" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwaar4pi000043a7tyljecpk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
