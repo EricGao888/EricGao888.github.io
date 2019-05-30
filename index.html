@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/29/JavaMVC/">MVC Design with Java</a>
+      <a class="article-title" href="/2019/05/29/JavaMVC/">MVC with Java</a>
     </h1>
   
 
@@ -84,14 +84,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
+<li><img src="/2019/05/29/JavaMVC/mvc.jpg" width="300px" height="200px"></li>
+<li>Both Servlet(print HTML) and JSP can create web pages without the other.</li>
+<li>In MVC pattern, JSP handles the presentation view, generate dynamic web pages, while Servlet focuses on the business logic.<h3 id="Benefits-of-MVC"><a href="#Benefits-of-MVC" class="headerlink" title="Benefits of MVC"></a>Benefits of MVC</h3></li>
+<li>Minimize the HTML code in Servlet.</li>
+<li>Minimize the business logic in JSP.</li>
+</ul>
+<h3 id="Interaction-between-Controller-and-Model"><a href="#Interaction-between-Controller-and-Model" class="headerlink" title="Interaction between Controller and Model"></a>Interaction between Controller and Model</h3><ul>
+<li>Define an object together with helper classes to fetch or modify data from the database as data model.</li>
+<li>Pass the dataSource to DB model in the controller to perform database pooling injection. </li>
+<li>Call method of DB model in controller to fetch or modify data from the database, avoid the direct interaction between controller and database. This achieves good code logic, make code easily maintained and ensure the safety of database.</li>
+</ul>
+<h3 id="Interaction-between-Controller-and-View"><a href="#Interaction-between-Controller-and-View" class="headerlink" title="Interaction between Controller and View"></a>Interaction between Controller and View</h3><ul>
+<li>Servlet access the data from <code>request</code>.</li>
+<li>Servlet can forward the data to JSP using <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- Servlet can add data to request object.</span><br><span class="line">- JSP access the data through `request `or JSTL(brief grammar). `$&#123;&quot;data&quot;&#125;$`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">// Servlet</span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(&quot;/view-students.jsp&quot;);</span><br><span class="line">dispatch.forward(request, response);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(&quot;student_list&quot;, students);</span><br><span class="line">// JSP</span><br><span class="line">request.getAttribute(&quot;student_list&quot;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h3 id="JSTL-I18N"><a href="#JSTL-I18N" class="headerlink" title="JSTL, I18N"></a>JSTL, I18N</h3><h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="doGet-and-doPost"><a href="#doGet-and-doPost" class="headerlink" title="doGet() and doPost()"></a><code>doGet()</code> and <code>doPost()</code></h3><h3 id="forward-and-redirect"><a href="#forward-and-redirect" class="headerlink" title="forward() and redirect()"></a><code>forward()</code> and <code>redirect()</code></h3><h3 id="Form-Processing"><a href="#Form-Processing" class="headerlink" title="Form Processing"></a>Form Processing</h3><h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<!--Format-->
+<!--header 1 | header 2-->
+<!-----|----->
+<!--row 1 col 1 | row 1 col 2-->
+<!--row 2 col 1 | row 2 col 2-->
+<!--<img src="/2019/05/29/JavaMVC/example.jpg" width="300px" height="200px">-->
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjw8xj5ih0003lya7wf2gb63e" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwa4jfy10001xha7y624lh7d" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC-Java-JSP-Servlet-JSTL/">MVC, Java, JSP, Servlet, JSTL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
 
     </footer>
   </div>
@@ -113,7 +136,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC-Java-JSP-Servlet-JSTL/">MVC, Java, JSP, Servlet, JSTL</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
     </div>
   </div>
 
@@ -123,7 +146,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MVC-Java-JSP-Servlet-JSTL/" style="font-size: 10px;">MVC, Java, JSP, Servlet, JSTL</a>
+      <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a>
     </div>
   </div>
 
@@ -145,7 +168,7 @@
       <ul>
         
           <li>
-            <a href="/2019/05/29/JavaMVC/">MVC Design with Java</a>
+            <a href="/2019/05/29/JavaMVC/">MVC with Java</a>
           </li>
         
       </ul>
