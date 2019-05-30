@@ -16,7 +16,7 @@
 <meta property="og:description" content="PreviewIn this article we discuss:  MVC JSP(JSTL) Servlet Test  MVC  Both Servlet(print HTML) and JSP(embed Java in HTML: expression, scriptlet, declaration) can create web pages without the other. In">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ericgao888.github.io/2019/05/29/JavaMVC/mvc.jpg">
-<meta property="og:updated_time" content="2019-05-30T08:22:30.089Z">
+<meta property="og:updated_time" content="2019-05-30T09:19:06.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC with Java">
 <meta name="twitter:description" content="PreviewIn this article we discuss:  MVC JSP(JSTL) Servlet Test  MVC  Both Servlet(print HTML) and JSP(embed Java in HTML: expression, scriptlet, declaration) can create web pages without the other. In">
@@ -185,7 +185,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3><!--```java-->
+<h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3><ul>
+<li>Store parameters in <code>WEB-INF/web.xml</code>.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ServletContext context = getServletContext();</span><br><span class="line">context.getInitParameter(<span class="string">"..."</span>) <span class="comment">// the return value is of String type</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Define parameter per Servlet: use <code>&lt;servlet&gt;</code>, <code>&lt;servlet-mappings&gt;</code> tags in web.xml; do not use Annotations <code>@WebServlet</code> in servlet file.</li>
+</ul>
+<!--```java-->
 <!--public static void main(String[] args){-->
 <!--}-->
 <!--```-->
@@ -199,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwabmhfi00036oa7l2eo8xej" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwag5od00003ema777o8shwf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
