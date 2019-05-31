@@ -5,15 +5,20 @@
   
 
   
-  <title>Eric&#39;s Fantasy</title>
+  <title>Notes | Eric&#39;s Fantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Eric&#39;s Fantasy">
-<meta property="og:url" content="https://EricGao888.github.io/index.html">
+  <meta name="description" content="Latex Use in ```float``` package to force algorithm or image in the exact place you want;1234567# Python## Settings - Check modules installed: Enter python shell```pythonhelp(&amp;quot;modules&amp;quot;)">
+<meta name="keywords" content="notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes">
+<meta property="og:url" content="https://EricGao888.github.io/2019/01/01/Notes/index.html">
 <meta property="og:site_name" content="Eric&#39;s Fantasy">
+<meta property="og:description" content="Latex Use in ```float``` package to force algorithm or image in the exact place you want;1234567# Python## Settings - Check modules installed: Enter python shell```pythonhelp(&amp;quot;modules&amp;quot;)">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-31T01:43:55.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eric&#39;s Fantasy">
+<meta name="twitter:title" content="Notes">
+<meta name="twitter:description" content="Latex Use in ```float``` package to force algorithm or image in the exact place you want;1234567# Python## Settings - Check modules installed: Enter python shell```pythonhelp(&amp;quot;modules&amp;quot;)">
   
     <link rel="alternate" href="/atom.xml" title="Eric&#39;s Fantasy" type="application/atom+xml">
   
@@ -60,160 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-JavaMVC" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/29/JavaMVC/" class="article-date">
-  <time datetime="2019-05-29T07:47:08.000Z" itemprop="datePublished">2019-05-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/29/JavaMVC/">MVC with Java</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Preview"><a href="#Preview" class="headerlink" title="Preview"></a>Preview</h2><p>In this article we discuss:</p>
-<ul>
-<li>MVC</li>
-<li>JSP(JSTL)</li>
-<li>Servlet</li>
-<li>Test</li>
-</ul>
-<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
-<li><img src="/2019/05/29/JavaMVC/mvc.jpg" width="500px" height="300px"></li>
-<li>Both Servlet(print HTML) and JSP(embed Java in HTML: expression, scriptlet, declaration) can create web pages without the other.</li>
-<li>In MVC pattern, JSP handles the presentation view, generate dynamic web pages, while Servlet focuses on the business logic.</li>
-<li>Comparsion of JSP and Serlet when creating pages alone:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>JSP</th>
-<th>Servlet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HTML file with .jsp extension.<br> Contains static HTML.<br> JSP to generate HTML.<br>Has built-in JSP objects</td>
-<td>Java class file.<br>Generate all HTML.<br>More steps to access web objects.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Benefits-of-MVC"><a href="#Benefits-of-MVC" class="headerlink" title="Benefits of MVC"></a>Benefits of MVC</h3><ul>
-<li>Minimize the HTML code in Servlet.</li>
-<li>Minimize the business logic in JSP.</li>
-</ul>
-<h3 id="Interaction-between-Controller-and-Model"><a href="#Interaction-between-Controller-and-Model" class="headerlink" title="Interaction between Controller and Model"></a>Interaction between Controller and Model</h3><ul>
-<li>Define an object together with helper classes to fetch or modify data from the database as data model.</li>
-<li>Pass the dataSource to DB model in the controller to perform database pooling injection. </li>
-<li>Call method of DB model in controller to fetch or modify data from the database, avoid the direct interaction between controller and database. This achieves good code logic, make code easily maintained and ensure the safety of database.</li>
-</ul>
-<h3 id="Interaction-between-Controller-and-View"><a href="#Interaction-between-Controller-and-View" class="headerlink" title="Interaction between Controller and View"></a>Interaction between Controller and View</h3><ul>
-<li>Servlet access the data from <code>request</code>.</li>
-<li>Servlet can forward the data to JSP using <code>Dispatcher</code>.</li>
-<li>Servlet can add data to request object.</li>
-<li>JSP access the data through <code>request</code>or JSTL(brief grammar). <code>${data}$</code></li>
-<li>JSP can redirect to Servlet using <code>response.sendRedirect(&lt;thePageUrl&gt;)</code>.</li>
-<li>User can not see the change of url when using <code>forward</code>, but can see when using <code>redirect</code>. </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Servlet</span></span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/view-students.jsp"</span>);</span><br><span class="line">dispatch.forward(request, response);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(<span class="string">"student_list"</span>, students);</span><br><span class="line"><span class="comment">// JSP</span></span><br><span class="line">request.getAttribute(<span class="string">"student_list"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="JSP-Java-Server-Pages"><a href="#JSP-Java-Server-Pages" class="headerlink" title="JSP(Java Server Pages)"></a>JSP(Java Server Pages)</h2><h3 id="JSP-Tags"><a href="#JSP-Tags" class="headerlink" title="JSP Tags"></a>JSP Tags</h3><ul>
-<li>Custom JSP Tags(Another way of avoiding heavy business logic in JSP) and JSTL.</li>
-<li>JSP Tags are reusable.</li>
-<li>JSP Tags minimize the scriptlet in JSP.</li>
-</ul>
-<h3 id="JSTL-Java-Standard-Tag-Library-I18N"><a href="#JSTL-Java-Standard-Tag-Library-I18N" class="headerlink" title="JSTL(Java Standard Tag Library), I18N"></a>JSTL(Java Standard Tag Library), I18N</h3><h4 id="JSTL-Core-Tags-prefix-c"><a href="#JSTL-Core-Tags-prefix-c" class="headerlink" title="JSTL Core Tags(prefix c)"></a>JSTL Core Tags(prefix <strong><em>c</em></strong>)</h4><ul>
-<li>Include a reference for core tags. (uri not need to connect to the Internet)</li>
-<li>Loop over an array variable:</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">c:forEach</span> <span class="attr">var</span>=<span class="string">"tmpCity"</span> <span class="attr">items</span>=<span class="string">"$&#123;myCity&#125;"</span>&gt;</span></span><br><span class="line">	$<span class="tag">&lt;<span class="name">tmpCity</span>&gt;</span> <span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">c:forEach</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="JSTL-Function-Tags"><a href="#JSTL-Function-Tags" class="headerlink" title="JSTL Function Tags"></a>JSTL Function Tags</h4><ul>
-<li>Include a reference for function tags.</li>
-<li>Length of a string:</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">c:set</span> <span class="attr">var</span>=<span class="string">"data"</span> <span class="attr">value</span>=<span class="string">"ericsayshi"</span>/&gt;</span></span><br><span class="line">Length of the String <span class="tag">&lt;<span class="name">b</span>&gt;</span> $&#123;data&#125; <span class="tag">&lt;/<span class="name">b</span>&gt;</span>: $&#123;fn: length(data)&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Split string into array:</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">c:set</span> <span class="attr">var</span>=<span class="string">"citiesArray"</span> <span class="attr">value</span>=<span class="string">"$&#123;fn:split(data, ',')&#125;"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="I18N"><a href="#I18N" class="headerlink" title="I18N"></a>I18N</h4><ul>
-<li>JSTL uses <strong><em>Formatting Message</em></strong> labels and <strong><em>locale</em></strong> to achieve internationalization: <code>fmt:setLocale</code>, <code>fmt:bundle</code>, <code>fmt:message</code></li>
-<li>Resource Files(translated version of labels)</li>
-<li>Achieve locale from user’s selection or <code>pageContext.request.locale</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--&gt;JSP will append locale after the basename automatically.&lt;--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fmt:setLocale</span> <span class="attr">value</span>=<span class="string">"es_ES"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fmt:bundle</span> <span class="attr">basename</span>=<span class="string">"com.tutorialspoint.Example"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fmt:message</span> <span class="attr">key</span>=<span class="string">"count.one"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fmt:message</span> <span class="attr">key</span>=<span class="string">"count.two"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">fmt:message</span> <span class="attr">key</span>=<span class="string">"count.three"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">fmt:bundle</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><ul>
-<li><code>Session</code> is stored in the server while <code>Cookie</code> is stored in user’s web browser.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">response.addCookie(...);</span><br><span class="line">Cookie[] theCookies = request.getCookies();</span><br></pre></td></tr></table></figure>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="Form-Processing"><a href="#Form-Processing" class="headerlink" title="Form Processing"></a>Form Processing</h3><ul>
-<li>HTML Form: <code>name=&quot;xxx&quot;</code>, <code>method=&quot;GET&quot;</code> or <code>method=&quot;POST&quot;</code>.</li>
-<li>Servlet access data through: <code>request.getParameter(&quot;xxx&quot;)</code>.</li>
-</ul>
-<h3 id="doGet-and-doPost"><a href="#doGet-and-doPost" class="headerlink" title="doGet() and doPost()"></a>doGet() and doPost()</h3><ul>
-<li>Form data appears as <code>name-value</code> pair in the URL of <code>doGet()</code> method: theUrl?field1=value1&amp;field2=value2…</li>
-<li>Form data is stored in the body of <code>request</code>(header and body) in <code>doPost()</code> method.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>doGet()</th>
-<th>doPost()</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>URL can be bookmarked or emailed.<br>Good for debugging.<br>Limitations on data length.</td>
-<td>URL can not be bookmarked or emailed.<br>No limitations on data length.<br> Can send binary data.<br> Form data won’t appear in the url.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Configuration-Parameters-Reading"><a href="#Configuration-Parameters-Reading" class="headerlink" title="Configuration Parameters Reading"></a>Configuration Parameters Reading</h3><ul>
-<li>Store parameters in <code>WEB-INF/web.xml</code>.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ServletContext context = getServletContext();</span><br><span class="line">context.getInitParameter(<span class="string">"..."</span>) <span class="comment">// the return value is of String type</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Define parameter per Servlet: use <code>&lt;servlet&gt;</code>, <code>&lt;servlet-mappings&gt;</code> tags in web.xml; do not use Annotations <code>@WebServlet</code> in servlet file.</li>
-</ul>
-<!--```java-->
-<!--public static void main(String[] args){-->
-<!--}-->
-<!--```-->
-<!--Format-->
-<!--header 1 | header 2-->
-<!-----|----->
-<!--row 1 col 1 | row 1 col 2-->
-<!--row 2 col 1 | row 2 col 2-->
-<!--<img src="/2019/05/29/JavaMVC/example.jpg" width="300px" height="200px">-->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwbfc2uo0002laa76sni4p02" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Notes" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Notes" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/01/Notes/" class="article-date">
   <time datetime="2019-01-01T01:38:16.000Z" itemprop="datePublished">2019-01-01</time>
@@ -226,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/01/Notes/">Notes</a>
+    <h1 class="article-title" itemprop="name">
+      Notes
     </h1>
   
 
@@ -431,11 +283,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/29/JavaMVC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MVC with Java
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
-
+</article>
 
 </section>
         
