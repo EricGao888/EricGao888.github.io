@@ -62,6 +62,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/05/redis/" class="article-date">
+  <time datetime="2019-06-05T07:48:48.000Z" itemprop="datePublished">2019-06-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/05/redis/">Redis</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="What-is-Redis"><a href="#What-is-Redis" class="headerlink" title="What is Redis"></a>What is Redis</h2><ul>
+<li>Redis is a in-memory data store, used as database, cache and message broker.</li>
+<li>Redis is NoSQL.</li>
+<li>Redis is non-volatile, different from memcached. Redis has built-in data persistency to avoid data disappearing from restart.</li>
+</ul>
+<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><ul>
+<li>SCAN: cursor-based</li>
+<li>MATCH: match pattern</li>
+<li>CONFIG: related to configuration of the server</li>
+<li>INFO: related to information of the server</li>
+<li>COMMAND: return details on redis commands</li>
+<li>CLIENT: manage clients</li>
+</ul>
+<h2 id="Data-Types"><a href="#Data-Types" class="headerlink" title="Data Types"></a>Data Types</h2><ul>
+<li>LISTS(Ordered): LPUSH, RPUSH, LRANGE, LLEN, LPOP, RPOP</li>
+<li>SETS(Unordered, No Repeating): SADD, SREM, SISMEMBER, SMEMBERS, SCARD, SMOVE, SUNION, SDIFF, SRANDOMEMBER, SPOP</li>
+<li>SORTED SETS(Ordered, Values No Repeating, Scores can repeat): ZADD, ZREM, ZRANGE, ZRANGEBYSCORE, ZRANK, ZCARD, ZCOUNT, ZINCBY, ZSCORE, </li>
+<li>HASH(Field-Value): HSET, HMSET, HGET, HMGET, HGETALL, HDEL, HEXISITS, HINCBY, HKEYS, HLEN, HVALS, HSTRLEN</li>
+</ul>
+<h2 id="Data-Persistence-From-Memory-To-Disk"><a href="#Data-Persistence-From-Memory-To-Disk" class="headerlink" title="Data Persistence(From Memory To Disk)"></a>Data Persistence(From Memory To Disk)</h2><ul>
+<li>RDB(Redis Database):Point-in-time Snapshots; SAVE, BGSAVE</li>
+<li>AOF(Append Only File): Write Operation Logging; rewrite, fsync;</li>
+</ul>
+<h2 id="Java-Client"><a href="#Java-Client" class="headerlink" title="Java Client"></a>Java Client</h2><ul>
+<li>Lettuce;</li>
+<li>Jedis;</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2019/06/05/redis/" data-id="cjwj2mbac0002bra7ybo9xrz2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaMVC" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/29/JavaMVC/" class="article-date">
@@ -201,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwbg99z60003qza7tzkmpedi" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjwj2mbag0005bra7c1ykutnt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
@@ -226,7 +291,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li></ul>
     </div>
   </div>
 
@@ -236,7 +301,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a>
+      <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a>
     </div>
   </div>
 
@@ -245,7 +310,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
     </div>
   </div>
 
@@ -256,6 +321,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/05/redis/">Redis</a>
+          </li>
         
           <li>
             <a href="/2019/05/29/JavaMVC/">MVC with Java</a>
