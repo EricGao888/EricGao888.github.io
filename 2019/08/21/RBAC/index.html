@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Role-based Access Control Web Service with Spring Boot | Eric&#39;s Fantasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Project Design Front-end pass username and web url to back-end then back-end will return boolean value to indicate whether the user can access the coresponding website. Front-end calls RESTful APIs im">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Role-based Access Control Web Service with Spring Boot">
+<meta property="og:url" content="https://EricGao888.github.io/2019/08/21/RBAC/index.html">
+<meta property="og:site_name" content="Eric&#39;s Fantasy">
+<meta property="og:description" content="Project Design Front-end pass username and web url to back-end then back-end will return boolean value to indicate whether the user can access the coresponding website. Front-end calls RESTful APIs im">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ericgao888.github.io/2019/08/21/RBAC/projStruct.jpg">
+<meta property="og:updated_time" content="2019-08-22T01:51:56.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Role-based Access Control Web Service with Spring Boot">
+<meta name="twitter:description" content="Project Design Front-end pass username and web url to back-end then back-end will return boolean value to indicate whether the user can access the coresponding website. Front-end calls RESTful APIs im">
+<meta name="twitter:image" content="https://ericgao888.github.io/2019/08/21/RBAC/projStruct.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Eric&#39;s Fantasy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Eric&#39;s Fantasy</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://EricGao888.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-RBAC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/21/RBAC/" class="article-date">
+  <time datetime="2019-08-22T01:50:04.000Z" itemprop="datePublished">2019-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Role-based Access Control Web Service with Spring Boot
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Project-Design"><a href="#Project-Design" class="headerlink" title="Project Design"></a>Project Design</h2><ul>
+<li>Front-end pass <em>username</em> and <em>web url</em> to back-end then back-end will return boolean value to indicate whether the user can access the coresponding website.</li>
+<li>Front-end calls <strong><em>RESTful APIs</em></strong> implemented by back-end to add, update, delete users and roles;<h2 id="RBAC-Model"><a href="#RBAC-Model" class="headerlink" title="RBAC Model"></a>RBAC Model</h2></li>
+<li>The relation between user and role is <strong><em>many to many</em></strong>, so as that between role and access;</li>
+<li><strong><em>Admin</em></strong> is a special type of role which has all web accesses and can manage users and other roles;</li>
+<li>Admin create a set of roles with corresponding access permissions and assign part of them to a new-added user.</li>
+<li>User gain accesses based on the roles he/she is assigned with.<h2 id="Database-Table-Design"><a href="#Database-Table-Design" class="headerlink" title="Database Table Design"></a>Database Table Design</h2></li>
+<li>User Table: </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>create_time</th>
+<th>update_time </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Role Table:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>type</th>
+<th>create_time</th>
+<th>update_time </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Access Table:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>url</th>
+<th>create_time</th>
+<th>update_time </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>User-Role Table:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>user_id</th>
+<th>role_id</th>
+<th>create_time</th>
+<th>update_time </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Role-Access Tabe:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>role_id</th>
+<th>access_id</th>
+<th>create_time</th>
+<th>update_time </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="RESTful-APIs-According-to-company’s-policy-url-and-request-method-are-not-provided"><a href="#RESTful-APIs-According-to-company’s-policy-url-and-request-method-are-not-provided" class="headerlink" title="RESTful APIs(According to company’s policy, url and request method are not provided):"></a>RESTful APIs(According to company’s policy, url and request method are not provided):</h2><ul>
+<li><code>listAllUsers</code></li>
+<li><code>loadUserRoles</code></li>
+<li><code>addUser</code></li>
+<li><code>updateUser</code></li>
+<li><code>deleteUser</code></li>
+<li><code>listAllRoles</code></li>
+<li><code>loadRoleAccesses</code></li>
+<li><code>addRole</code></li>
+<li><code>updateRole</code></li>
+<li><code>deleteRole</code></li>
+</ul>
+<h2 id="Spring-Boot-Project-Structure"><a href="#Spring-Boot-Project-Structure" class="headerlink" title="Spring Boot Project Structure"></a>Spring Boot Project Structure</h2><ul>
+<li><img src="/2019/08/21/RBAC/projStruct.jpg" width="500px" height="300px"></li>
+</ul>
+<h2 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h2><ul>
+<li><strong>Jackson</strong> maps <strong>JSON</strong> <-> <strong>Java POJO</strong> Automatically<h2 id="Parameter-Acquiring-and-Sending"><a href="#Parameter-Acquiring-and-Sending" class="headerlink" title="Parameter Acquiring and Sending"></a>Parameter Acquiring and Sending</h2></-></li>
+<li><code>@GetMapping(&#39;/url&#39;)</code>: <code>@RequestParam</code></li>
+<li><code>@PostMapping(&#39;/url&#39;)</code>: <code>@RequestBody</code></li>
+<li><code>@PutMapping(&#39;/url&#39;)</code>: <code>@RequestBody</code></li>
+<li><code>@DeleteMapping(&#39;/url/{id}&#39;)</code> : <code>@PathVariable</code></li>
+<li><code>response</code>: code, message, data<h2 id="Related-Spring-Annotation"><a href="#Related-Spring-Annotation" class="headerlink" title="Related Spring Annotation"></a>Related Spring Annotation</h2></li>
+<li><code>@Autowired</code></li>
+<li><code>@RestController</code></li>
+</ul>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h3 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h3><h3 id="Mockito-Unit-Test"><a href="#Mockito-Unit-Test" class="headerlink" title="Mockito Unit Test"></a>Mockito Unit Test</h3><ul>
+<li><code>@InjectMocks</code></li>
+<li><code>@Mock</code></li>
+<li><code>MockMVC</code>: <code>perform()</code>, <code>andExpect()</code></li>
+<li><code>when-return</code></li>
+<li><code>verify</code></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://EricGao888.github.io/2019/08/21/RBAC/" data-id="cjzm167yt0006cbu8v5dfoqjk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/05/redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Redis</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/21/RBAC/">Role-based Access Control Web Service with Spring Boot</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/05/redis/">Redis</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/29/JavaMVC/">MVC with Java</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Eric Gao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
