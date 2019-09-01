@@ -16,7 +16,7 @@
 <meta property="og:description" content="PreviewIn this article we discuss:  MVC JSP(JSTL) Servlet Test  MVC  Both Servlet(print HTML) and JSP(embed Java in HTML: expression, scriptlet, declaration) can create web pages without the other. In">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ericgao888.github.io/2019/05/29/JavaMVC/mvc.jpg">
-<meta property="og:updated_time" content="2019-05-30T09:19:06.682Z">
+<meta property="og:updated_time" content="2019-09-01T23:14:31.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC with Java">
 <meta name="twitter:description" content="PreviewIn this article we discuss:  MVC JSP(JSTL) Servlet Test  MVC  Both Servlet(print HTML) and JSP(embed Java in HTML: expression, scriptlet, declaration) can create web pages without the other. In">
@@ -133,7 +133,7 @@
 <li>JSP can redirect to Servlet using <code>response.sendRedirect(&lt;thePageUrl&gt;)</code>.</li>
 <li>User can not see the change of url when using <code>forward</code>, but can see when using <code>redirect</code>. </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Servlet</span></span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/view-students.jsp"</span>);</span><br><span class="line">dispatch.forward(request, response);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(<span class="string">"student_list"</span>, students);</span><br><span class="line"><span class="comment">// JSP</span></span><br><span class="line">request.getAttribute(<span class="string">"student_list"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Servlet</span></span><br><span class="line">RequestDispatcher dispatcher = request.getRequestDispatcher(<span class="string">"/view-students.jsp"</span>);</span><br><span class="line">String[] students = ...;</span><br><span class="line">request.setAttribute(<span class="string">"student_list"</span>, students);</span><br><span class="line">dispatcher.forward(request, response);</span><br><span class="line"><span class="comment">// JSP</span></span><br><span class="line">request.getAttribute(<span class="string">"student_list"</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="JSP-Java-Server-Pages"><a href="#JSP-Java-Server-Pages" class="headerlink" title="JSP(Java Server Pages)"></a>JSP(Java Server Pages)</h2><h3 id="JSP-Tags"><a href="#JSP-Tags" class="headerlink" title="JSP Tags"></a>JSP Tags</h3><ul>
 <li>Custom JSP Tags(Another way of avoiding heavy business logic in JSP) and JSTL.</li>
 <li>JSP Tags are reusable.</li>
@@ -206,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="cjzm1anha0006ebu8t65ch0ab" class="article-share-link">Share</a>
+      <a data-url="https://EricGao888.github.io/2019/05/29/JavaMVC/" data-id="ck01leie500035cu8g1fr7hpo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li></ul>
